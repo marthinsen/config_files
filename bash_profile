@@ -87,3 +87,4 @@ export LS_COLORS
 alias grep='grep --color'
 
 export EDITOR=/usr/bin/vim
+
