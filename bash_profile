@@ -73,6 +73,7 @@ if [[ $OSTYPE == 'linux-gnu' ]]; then
   REV="\[$(tput rev)\]"
 
   export PS1="$BLUE$BOLD\u@\h$WHITE:$YELLOW\w$RED\$$RETURN "
+fi
 
   alias ls='ls --color'
   LS_COLORS='di=1;34:fi=0:ln=94:ex=32'
@@ -81,7 +82,6 @@ if [[ $OSTYPE == 'linux-gnu' ]]; then
   alias grep='grep --color'
 
   export EDITOR=/usr/bin/vim
-fi
 
 # Add $HOME/bin/ to path
 if [[ -d "$HOME/bin" ]];  then
