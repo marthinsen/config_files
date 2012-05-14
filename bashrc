@@ -196,3 +196,11 @@
 # }
 # 
 # alias cd=cd_func
+
+if [[ $OSTYPE == cygwin ]]; then
+  echo "You are running cygwin\n"
+elif [[ $OSTYPE == linux-gnu ]]; then
+  echo "You are running linux-gnu\n"
+else 
+  echo "Your OS-type is not recognized\n"
+fi
