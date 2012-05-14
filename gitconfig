@@ -1,0 +1,7 @@
+[color]
+	ui = true
+[user]
+	name = Eirik Marthinsen
+	email = eirik@petrell.no
+[core]
+	editor = vim
