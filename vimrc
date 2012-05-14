@@ -152,3 +152,55 @@ au BufNewFile,BufRead *.brl, set filetype=brl
 augroup end
 
 
+" File ~/.vimrc
+" Global settings for all files (but may be overridden in ftplugin).
+set tabstop=2
+set expandtab
+set shiftwidth=2
+
+colorscheme desert_EM
+
+" Text wrapping according to 
+" http://vim.wikia.com/wiki/Word_wrap_without_line_breaks
+:set wrap
+:set linebreak
+:set nolist  " list disables linebreak
+:set textwidth=0
+:set wrapmargin=0
+:set formatoptions+=l
+
+" And then remapping of move-keys to move up/down as the lines is seen and not
+" as they are for rel without the wrapping
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+nnoremap <Down> gj
+nnoremap <Up> gk
+vnoremap <Down> gj
+vnoremap <Up> gk
+inoremap <Down> <C-o>gj
+inoremap <Up> <C-o>gk
+
+" REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
+filetype plugin on
+
+" IMPORTANT: win32 users will need to have 'shellslash' set so that latex
+" can be called correctly.
+set shellslash
+
+" IMPORTANT: grep will sometimes skip displaying the file name if you
+" search in a singe file. This will confuse Latex-Suite. Set your grep
+" program to always generate a file-name.
+set grepprg=grep\ -nH\ $*
+
+" OPTIONAL: This enables automatic indentation as you type.
+filetype indent on
+
+" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+" The following changes the default filetype back to 'tex':
+let g:tex_flavor='latex'
+
+" Making seach case insensitive as long as just lower case letters is used
+:set smartcase
