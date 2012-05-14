@@ -55,36 +55,36 @@ fi
 
 
 # Bash_profile for Eirik Marthinsen
+if [[ $OSTYPE == 'linux-gnu' ]]; then
+  export TERM=xterm-256color
 
-export TERM=xterm-256color
+  # ==== alias for colors ========
+  BLACK="\[$(tput setaf 0)\]"
+  BLUE="\[$(tput setaf 4)\]"
+  GREEN="\[$(tput setaf 2)\]"
+  CYAN="\[$(tput setaf 6)\]"
+  RED="\[$(tput setaf 1)\]"
+  MAGENTA="\[$(tput setaf 5)\]"
+  YELLOW="\[$(tput setaf 3)\]"
+  WHITE="\[$(tput setaf 7)\]"
 
-# ==== alias for colors ========
-BLACK="\[$(tput setaf 0)\]"
-BLUE="\[$(tput setaf 4)\]"
-GREEN="\[$(tput setaf 2)\]"
-CYAN="\[$(tput setaf 6)\]"
-RED="\[$(tput setaf 1)\]"
-MAGENTA="\[$(tput setaf 5)\]"
-YELLOW="\[$(tput setaf 3)\]"
-WHITE="\[$(tput setaf 7)\]"
+  RETURN="\[$(tput sgr0)\]"
+  BOLD="\[$(tput bold)\]"
+  REV="\[$(tput rev)\]"
 
-RETURN="\[$(tput sgr0)\]"
-BOLD="\[$(tput bold)\]"
-REV="\[$(tput rev)\]"
+  export PS1="$BLUE$BOLD\u@\h$WHITE:$YELLOW\w$RED\$$RETURN "
 
-export PS1="$BLUE$BOLD\u@\h$WHITE:$YELLOW\w$RED\$$RETURN "
+  alias ls='ls --color'
+  LS_COLORS='di=1;34:fi=0:ln=94:ex=32'
+  export LS_COLORS
 
+  alias grep='grep --color'
 
-# Add $HOME/bin/ to path
-if [ -d "$HOME/bin" ] ; then
-  PATH="$HOME/bin:$PATH"
+  export EDITOR=/usr/bin/vim
 fi
 
-alias ls='ls --color'
-LS_COLORS='di=1;34:fi=0:ln=94:ex=32'
-export LS_COLORS
-
-alias grep='grep --color'
-
-export EDITOR=/usr/bin/vim
+# Add $HOME/bin/ to path
+if [[ -d "$HOME/bin" ]];  then
+  PATH="$HOME/bin:$PATH"
+fi
 

@@ -210,9 +210,9 @@ alias lk='ls -lSr'        # sort by size
 alias lc='ls -ltcr'       # sort by and show change time, most recent last
 alias lu='ls -ltur'       # sort by and show access time, most recent last
 
-if [[ $OSTYPE == cygwin ]]; then
+if [[ $OSTYPE == 'cygwin' ]]; then
   echo "You are running cygwin\n"
-elif [[ $OSTYPE == linux-gnu ]]; then
+elif [[ $OSTYPE == 'linux-gnu' ]]; then
   echo "You are running linux-gnu\n"
 else 
   echo "Your OS-type is not recognized\n"
