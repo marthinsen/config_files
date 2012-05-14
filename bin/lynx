@@ -1,0 +1,3 @@
+#! /bin/bash
+
+ssh eirikma@lynx.stud.ntnu.no
