@@ -196,3 +196,16 @@
 # }
 # 
 # alias cd=cd_func
+
+
+export PS1="\[$(tput setaf 2)\]\u\[$(tput setaf 3)\]@\[$(tput setaf 4)\]\h\[$(tput setaf 5)\]:\[$(tput setaf 6)\]\w \[$(tput setaf 7)\]$ \[$(tput sgr0)\]"
+
+export EDITOR=vim
+
+alias ls='ls -hF --color' # add color for filetype recognition
+alias ll='ls -l --group-directories-first'
+alias la='ls -lA'         # show hidden files
+alias lx='ls -lXB'        # sort by extension
+alias lk='ls -lSr'        # sort by size
+alias lc='ls -ltcr'       # sort by and show change time, most recent last
+alias lu='ls -ltur'       # sort by and show access time, most recent last
