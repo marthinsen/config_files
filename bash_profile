@@ -42,3 +42,12 @@ fi
 # if [ -d "${HOME}/info" ]; then
 #   INFOPATH="${HOME}/info:${INFOPATH}"
 # fi
+
+#################
+# Eirik's stuff #
+#################
+
+# Include what's in .bashrc as well 
+if [ -f ~/.bashrc ]; then
+  source ~/.bashrc
+fi

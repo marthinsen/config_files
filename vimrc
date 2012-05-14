@@ -94,3 +94,61 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
 endif
+
+
+
+set nocompatible
+source $VIMRUNTIME/vimrc_example.vim
+source $VIMRUNTIME/mswin.vim
+behave mswin
+set diffexpr=MyDiff()
+
+"my settings
+set showcmd " Show (partial) command in status line.
+set showmatch " Show matching brackets.
+set ignorecase " Do case insensitive matching"
+set incsearch " Incremental search"
+set autowrite " Automatically save before commands like :next and :makeset cindent
+set autoindent
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
+set laststatus=2
+set expandtab
+set ignorecase
+set ruler
+set nohlsearch
+set smarttab
+set vb
+syntax on
+set fdm=marker
+set nofen
+colo torte
+
+map <silent> <F2> :if &background == "light"<CR>set background=dark<CR>else<CR>setbackground=light<CR>endif<CR>
+noremap <F3> :res<CR>
+noremap <F4> <C-W>=
+map <F5> :set invhlsearch<CR>
+ 
+map <F7> g<C-]>
+map <F8> <C-T>
+map <F10> :set invnu<CR>
+map <C-J> <C-W>j
+map <C-K> <C-W>k
+
+" windows settings: (font/size/position)
+" default system
+" set guifont=Lucida_Console:h11
+" system with Consolas font, download it from M$:
+" http://www.microsoft.com/downloads/details.aspx?familyid=22e69ae4-7e40-4807-8a86-b3d36fab68d3&displaylang=en
+set guifont=Consolas:h10
+winsize 100 50
+winpos 120 60
+set nobackup
+set nowritebackup
+
+augroup brl
+au BufNewFile,BufRead *.brl, set filetype=brl 
+augroup end
+
+

@@ -5,3 +5,9 @@
 	email = eirik@petrell.no
 [core]
 	editor = vim
+[alias]
+  st = status
+  ci = commit
+  cim = commit -m 
+[apply]
+	whitespace = nowarn
