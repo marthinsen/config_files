@@ -9,6 +9,7 @@ mv ~/.bash_aliases ~/.bash_aliases.bak
 mv ~/.vimrc ~/.vimrc.bak
 mv ~/.vim ~/.vim.bak
 mv ~/bin ~/bin.bak
+mv ~/.screenrc ~/.screenrc.bak
 
 echo "Creating symlinks to new ones"
 
@@ -19,3 +20,4 @@ ln -s $( cd "$( dirname "$0" )" && pwd )/bash_aliases ~/.bash_aliases
 ln -s $( cd "$( dirname "$0" )" && pwd )/vimrc ~/.vimrc
 ln -s $( cd "$( dirname "$0" )" && pwd )/vim ~/.vim
 ln -s $( cd "$( dirname "$0" )" && pwd )/bin ~/bin
+ln -s $( cd "$( dirname "$0" )" && pwd )/screenrc ~/.screenrc
