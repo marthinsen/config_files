@@ -26,17 +26,9 @@ if [[ -d "$HOME/bin" ]]; then
   PATH="$HOME/bin:$PATH"
 fi
 
-export EDITOR=vim
-export LESS='-R'
-
-# Special for cygwin
-if [[ $OSTYPE == 'cygwin' ]]; then
-  mount c: /c
-  mount d: /d
-  mount f: /f
-fi
-
-export TERM=xterm-256color
+export EDITOR=vim               # Set vim to default editor
+export LESS='-R'                # Correct escape characters 
+export TERM=xterm-256color      # Get 256 colors in vim (?)
 
 # ==== alias for colors ========
 BLACK="\[$(tput setaf 0)\]"
