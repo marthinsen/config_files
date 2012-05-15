@@ -142,8 +142,8 @@ map <C-K> <C-W>k
 " system with Consolas font, download it from M$:
 " http://www.microsoft.com/downloads/details.aspx?familyid=22e69ae4-7e40-4807-8a86-b3d36fab68d3&displaylang=en
 set guifont=Consolas:h10
-winsize 100 50
-winpos 120 60
+"winsize 100 50
+"winpos 120 60
 set nobackup
 set nowritebackup
 
