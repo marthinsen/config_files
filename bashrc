@@ -44,7 +44,7 @@ RETURN="\[$(tput sgr0)\]"
 BOLD="\[$(tput bold)\]"
 REV="\[$(tput rev)\]"
 
-export PS1="$BLUE$BOLD\u@\h$WHITE:$YELLOW\w$RED\$$RETURN "
+export PS1="$BLUE$BOLD\u$RED@$BLUE\h$RED:$YELLOW\w$RED\$$RETURN "
 
 # color output of ls command
 LS_COLORS="di=01;35" 
