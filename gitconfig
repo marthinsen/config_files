@@ -9,5 +9,7 @@
   st = status
   ci = commit
   cim = commit -m 
+  cima = commit -a -m
+  lo = log --decorate --oneline --graph
 [apply]
 	whitespace = nowarn

@@ -27,6 +27,7 @@ if [[ -d "$HOME/bin" ]]; then
 fi
 
 export EDITOR=vim
+export LESS='-R'
 
 # Special for cygwin
 if [[ $OSTYPE == 'cygwin' ]]; then
