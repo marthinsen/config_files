@@ -7,9 +7,15 @@ mv ~/.bashrc ~/.bashrc.bak
 mv ~/.bash_profile ~/.bash_profile.bak
 mv ~/.bash_aliases ~/.bash_aliases.bak
 mv ~/.vimrc ~/.vimrc.bak
-mv ~/.vim ~/.vim.bak
-mv ~/bin ~/bin.bak
 mv ~/.screenrc ~/.screenrc.bak
+if [ -L ~/.vim.bak ] ; then
+  rm ~/.vim.bak
+  mv ~/.vim ~/.vim.bak
+fi
+if [ -L ~/bin.bak ] ; then
+  rm ~/bin.bak
+  mv ~/bin ~/bin.bak
+fi
 
 echo "Creating symlinks to new ones"
 
