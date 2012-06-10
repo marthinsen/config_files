@@ -21,6 +21,11 @@ if [ -f "${HOME}/.bash_aliases" ]; then
   source "${HOME}/.bash_aliases"
 fi
 
+# Functions
+if [ -f "${HOME}/.bash_functions" ]; then
+  source "${HOME}/.bash_functions"
+fi
+
 # Add $HOME/bin/ to path
 if [[ -d "$HOME/bin" ]]; then
   PATH="$HOME/bin:$PATH"

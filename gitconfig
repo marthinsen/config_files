@@ -11,5 +11,6 @@
   cim = commit -m 
   cima = commit -a -m
   lo = log --decorate --oneline --graph
+  co = checkout
 [apply]
 	whitespace = nowarn
