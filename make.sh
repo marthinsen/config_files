@@ -2,14 +2,30 @@
 
 echo "Moving old config files"
 
-mv ~/.gitconfig ~/.gitconfig.bak
-mv ~/.bashrc ~/.bashrc.bak
-mv ~/.bash_profile ~/.bash_profile.bak
-mv ~/.bash_aliases ~/.bash_aliases.bak
-mv ~/.vimrc ~/.vimrc.bak
-mv ~/.vim ~/.vim.bak
-mv ~/bin ~/bin.bak
-mv ~/.screenrc ~/.screenrc.bak
+if [ -f ~/.gitconfig ] ; then
+  mv ~/.gitconfig ~/.gitconfig.bak
+fi
+if [ -f ~/.bashrc ] ; then
+  mv ~/.bashrc ~/.bashrc.bak
+fi
+if [ -f ~/.bash_profile ] ; then
+  mv ~/.bash_profile ~/.bash_profile.bak
+fi
+if [ -f ~/.bash_aliases ] ; then
+  mv ~/.bash_aliases ~/.bash_aliases.bak
+fi
+if [ -f ~/.vimrc ] ; then
+  mv ~/.vimrc ~/.vimrc.bak
+fi
+if [ -d ~/.vim ] ; then
+  mv ~/.vim ~/.vim.bak
+fi
+if [ -d ~/bin ] ; then
+  mv ~/bin ~/bin.bak
+fi
+if [ -f ~/.screenrc ] ; then
+  mv ~/.screenrc ~/.screenrc.bak
+fi
 
 echo "Creating symlinks to new ones"
 
