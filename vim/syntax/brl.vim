@@ -10,6 +10,10 @@ endif
 setlocal iskeyword+=#,$,%,@
 syn case ignore
 
+" Equation errors
+syn match brlError "\(=\)\@<!=\(=\)\@!"
+
+
 " Equaiton 
 syn match	brlEquation	"=[^=]\+;" contains=brlMath
 
