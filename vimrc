@@ -204,3 +204,7 @@ let g:tex_flavor='latex'
 
 " Making seach case insensitive as long as just lower case letters is used
 :set smartcase
+
+
+" Put swapfiles in separate folder
+set directory=$VIM//

@@ -4,13 +4,15 @@
 	name = Eirik Marthinsen
 	email = eirik@petrell.no
 [core]
+  autocrlf = input
 	editor = vim
 [alias]
   st = status
   ci = commit
   cim = commit -m 
   cima = commit -a -m
-  lo = log --decorate --oneline --graph
+  lo = log --decorate --abbrev-commit --date=relative
+  slo = log --decorate --oneline --graph
   co = checkout
 [apply]
 	whitespace = nowarn
