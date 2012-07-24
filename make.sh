@@ -41,3 +41,4 @@ ln -s $( cd "$( dirname "$0" )" && pwd )/vimrc ~/.vimrc
 ln -s $( cd "$( dirname "$0" )" && pwd )/vim ~/.vim
 ln -s $( cd "$( dirname "$0" )" && pwd )/bin ~/bin
 ln -s $( cd "$( dirname "$0" )" && pwd )/screenrc ~/.screenrc
+ln -s $( cd "$( dirname "$0" )" && pwd )/git-completion.sh ~/.git-completion.sh

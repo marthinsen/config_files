@@ -60,4 +60,8 @@ if [[ -d "$HOME/bin" ]];  then
   PATH="$HOME/bin:$PATH"
 fi
 
+# Make sure file permissions after git push is preserved
 umask 000
+
+# Use git-completion
+source ~/.git-completion.sh
