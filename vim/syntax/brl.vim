@@ -211,7 +211,7 @@ syn keyword brlSubCommand
 "
 " Global commands
 "
-syn match   brlAlphaKroll "@\(Define\|Readfile\|while\|if\|do\|debug\|@\|calc\|endif\)"
+syn match   brlAlphaKroll "@\(define\|readfile\|while\|if\|do\|debug\|@\|calc\|endif\|verify\)"
 syn keyword brlDollar 
   \ $boundaryconditions
   \ $brf-1.00
@@ -242,22 +242,56 @@ syn keyword brlVariables
   \ false
 " materials
 syn keyword brlVariables 
-  \ carbonsteel
+  \ air
   \ c1
   \ c2
   \ c3
   \ c4
   \ c5
+  \ carbonsteel
+  \ carbonwool_128
+  \ carbonwool_64
+  \ carbonwool_96
+  \ chalk
+  \ chartek_iii_t>35mm
   \ co2
+  \ copper
+  \ cs_235lt
+  \ cs_360lt
+  \ duplex_22cr
+  \ duplexsaf2304
+  \ earth
+  \ f_icl_tymar_10k
+  \ f_wkl_m444
+  \ firemaster607_128
+  \ firemaster607_160
+  \ firemaster607_192
+  \ firemaster607_64
+  \ firemaster607_96
   \ foamglas
   \ gas
   \ h2o
   \ ic4
   \ ic5
+  \ icl_tymar_10k
+  \ kaowool_128
   \ liquid
   \ n2
   \ o2
+  \ paroc_110
+  \ polyurethane
+  \ rockwool
+  \ soilmodifiedmohr
   \ ss_316
+  \ ss_6mo
+  \ stainlessg003
+  \ stainlessg301
+  \ stainlessg401
+  \ stainlessg462
+  \ stainlessg571
+  \ stainlessmgo
+  \ supere_500
+  \ wkl_m444
  
 "
 " Comments
