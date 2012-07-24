@@ -14,25 +14,239 @@ syn case ignore
 syn match brlError "\(=\)\@<!=\(=\)\@!"
 
 
-" Equaiton 
+" 
+" Equaiton
+" 
 syn match	brlEquation	"=[^=]\+;" contains=brlMath
 
+" 
 " Keywords
-syn keyword brlMath sin cos tan sqrt PI max min contained
-syn keyword brlCommand #block #copy #block #copy #endcopy #paste #transform_end #transform #set_part_name #reference_coordinates #gridfile #scenariofile #maxtime #graphicfile #output_frequence #max_timestep #courant_number #show_screen_results #end_of_file #name #material #initial_conditions #cylinder_resolution #average #write_frequence #spot #extern_grid #cylinder_angle #cylinder_periphery #cylinder_squer_size #cylinder_center #return #tank #pipemerge #pipebend #pipe #cylinder #hexahedron #extract #split_cv #move_cv_between_models #paste_global_point #copy_global_coordinate #copy_global_point #local_coordinates #global_coordinates #readfile #reset_part_name #endcopyincremental #copyincremental #paste_global #paste_mirror #paste_local #paste #displacement #adjust_size #polar #cartesian #store_regular_grid #fan_end #fan #source_sink_end #source_sink #sink_end #sink #source_end #source #current_model_area #initial_conditions #phase_type #material #current_model_area #global_coordinates #heat_transfer #fixed_value #fan #source_sink #sink #source #variable_value #point_load #surface_load #displacement #pressure #adiabatic #flame #check_area_error #capturefile #database_path
+"
+syn keyword brlMath contained
+  \ cos
+  \ max
+  \ min
+  \ pi
+  \ sin
+  \ sqrt
+  \ tan
+syn keyword brlCommand 
+  \ #adiabatic
+  \ #adjust_size
+  \ #average
+  \ #block 
+  \ #capturefile
+  \ #cartesian
+  \ #check_area_error
+  \ #copy 
+  \ #copy_global_coordinate
+  \ #copy_global_point
+  \ #copyincremental
+  \ #courant_number
+  \ #current_model_area
+  \ #cylinder
+  \ #cylinder_angle
+  \ #cylinder_center
+  \ #cylinder_periphery
+  \ #cylinder_resolution
+  \ #cylinder_squer_size
+  \ #database_path
+  \ #displacement
+  \ #end_of_file
+  \ #endcopy
+  \ #endcopyincremental
+  \ #extern_grid
+  \ #extract
+  \ #fan
+  \ #fan_end
+  \ #fixed_value
+  \ #flame
+  \ #global_coordinates
+  \ #graphicfile
+  \ #gridfile
+  \ #heat_transfer
+  \ #hexahedron
+  \ #initial_conditions
+  \ #local_coordinates
+  \ #material
+  \ #max_timestep
+  \ #maxtime
+  \ #move_cv_between_models
+  \ #name
+  \ #output_frequence
+  \ #paste
+  \ #paste_global
+  \ #paste_global_point
+  \ #paste_local
+  \ #paste_mirror
+  \ #phase_type
+  \ #pipe
+  \ #pipebend
+  \ #pipemerge
+  \ #point_load
+  \ #polar
+  \ #pressure
+  \ #readfile
+  \ #reference_coordinates
+  \ #reset_part_name
+  \ #return
+  \ #scenariofile
+  \ #set_part_name
+  \ #show_screen_results
+  \ #sink
+  \ #sink_end
+  \ #source
+  \ #source_end
+  \ #source_sink
+  \ #source_sink_end
+  \ #split_cv
+  \ #spot
+  \ #store_regular_grid
+  \ #surface_load
+  \ #tank
+  \ #transform
+  \ #transform_end
+  \ #variable_value
+  \ #write_frequence
 
-syn keyword brlSubCommand %displace %rotax %rotang %rotpoint %newgroup %model %retrieve %copygroup %keepinitiation %init %presplit %split %newgraphname %verify %res %part %vec %ang %rad %len %connect %dia %wall %pipe %nozzel %vecup %vecpkt %piprad %store %expandinnerring %expandouterring %divisor %RoughnessHeight %phase %setpoint %upperlimit %lowpoint %plugin %plugout %thermostatloc %coolerinletloc %volumerate %force %speed %fandirection %setheattransfer %environmenttemp %windspeed %radiationtemp %emissivity %ShowSpot
+" VessFire specific commands
+syn keyword brlCommand
+  \ #back_pressure
+  \ #bdv_valve_location
+  \ #blowdown_line
+  \ #blowdown_valve
+  \ #external_longitudinal_stress
+  \ #fluid
+  \ #heat_load
+  \ #max_ruptured_pipes
+  \ #peak_load
+  \ #process_safety_valve
+  \ #psv_valve_location
+  \ #stressFactor
+  \ #stressType
+  \ #vessel
+  \ #vessel_conditions
+  \ #vessel_orientation
+  \ #vessel_outside_conditions
 
+" 
+" Subcommands
+"
+syn keyword brlSubCommand
+  \ %ang
+  \ %connect
+  \ %coolerinletloc
+  \ %copygroup
+  \ %dia
+  \ %displace
+  \ %divisor
+  \ %emissivity
+  \ %environmenttemp
+  \ %expandinnerring
+  \ %expandouterring
+  \ %fandirection
+  \ %force
+  \ %init
+  \ %keepinitiation
+  \ %len
+  \ %lowpoint
+  \ %model
+  \ %newgraphname
+  \ %newgroup
+  \ %nozzel
+  \ %part
+  \ %phase
+  \ %pipe
+  \ %piprad
+  \ %plugin
+  \ %plugout
+  \ %presplit
+  \ %rad
+  \ %radiationtemp
+  \ %res
+  \ %retrieve
+  \ %rotang
+  \ %rotax
+  \ %rotpoint
+  \ %roughnessHeight
+  \ %setheattransfer
+  \ %setpoint
+  \ %showSpot
+  \ %speed
+  \ %split
+  \ %store
+  \ %thermostatloc
+  \ %upperlimit
+  \ %vec
+  \ %vecpkt
+  \ %vecup
+  \ %verify
+  \ %volumerate
+  \ %wall
+  \ %windspeed
+" VessFire specific subcommands
+syn keyword brlSubCommand
+  \ %corTol
+  \ %inventory
+  \ %prodTol
+  \ %shell
+
+"
+" Global commands
+"
 syn match   brlAlphaKroll "@\(Define\|Readfile\|while\|if\|do\|debug\|@\|calc\|endif\)"
-syn keyword brlDollar     $end_of_file $brilliantFormat $model $brf-2.00 $brf-1.00 $boundaryconditions $file_name
+syn keyword brlDollar 
+  \ $boundaryconditions
+  \ $brf-1.00
+  \ $brf-2.00
+  \ $brilliantFormat
+  \ $end_of_file
+  \ $file_name 
+  \ $model
+  \ $vessFire
 
-syn keyword brlVariables  temperature emissivity absorption Vx-velocity Vy-velocity Vz-velocity Pressure air_temperature
-syn keyword brlVariables  temperature emittedradiation exposedradiation enthalpy
+"
+" Variables (?) 
+"
+syn keyword brlVariables 
+  \ Pressure
+  \ Vx-velocity
+  \ Vy-velocity
+  \ Vz-velocity
+  \ absorption
+  \ air_temperature
+  \ emissivity
+  \ temperature
+syn keyword brlVariables  
+  \ emittedradiation
+  \ enthalpy
+  \ exposedradiation
+" materials
+syn keyword brlVariables 
+  \ c1
+  \ c2
+  \ c3
+  \ c4
+  \ c5
+  \ co2
+  \ foamglas
+  \ gas
+  \ h2o
+  \ ic4
+  \ ic5
+  \ liquid
+  \ n2
+  \ ss_316
  
+"
+" Comments
+"
 syn region	brlComment	start="//" skip="\\$" end="$" keepend
 syn region	brlComment	start="/\*" end="\*/"
 
-"integer number, or floating point number without a dot and with "f".
+" 
+" integer number, or floating point number without a dot and with "f".
+"
 syn match	brlNumbers	display transparent "\<\d\|\.\d" contains=brlNumber,brlFloat 
 syn match	brlNumber		display contained "\d\+\(u\=l\{0,2}\|ll\=u\)\>"
 syn match	brlFloat		display contained "\d\+\.\d*\(e[-+]\=\d\+\)\=[fl]\="
