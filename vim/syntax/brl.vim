@@ -35,21 +35,26 @@ syn keyword brlCommand
   \ #adjust_size
   \ #average
   \ #block 
+  \ #brf2_input_file
   \ #capturefile
   \ #cartesian
   \ #check_area_error
+  \ #check_interface_connections
+  \ #continuity_limit
   \ #copy 
   \ #copy_global_coordinate
   \ #copy_global_point
   \ #copyincremental
   \ #courant_number
   \ #current_model_area
+  \ #cv_connection_tolerance
   \ #cylinder
   \ #cylinder_angle
   \ #cylinder_center
   \ #cylinder_periphery
   \ #cylinder_resolution
   \ #cylinder_squer_size
+  \ #database_file
   \ #database_path
   \ #displacement
   \ #end_of_file
@@ -62,6 +67,8 @@ syn keyword brlCommand
   \ #fixed_value
   \ #flame
   \ #global_coordinates
+  \ #glview_format
+  \ #glview_name
   \ #graphicfile
   \ #gridfile
   \ #heat_transfer
@@ -69,10 +76,16 @@ syn keyword brlCommand
   \ #initial_conditions
   \ #local_coordinates
   \ #material
+  \ #matrix_gmres_parameter
+  \ #max_area_error
   \ #max_timestep
+  \ #maxstep
   \ #maxtime
   \ #move_cv_between_models
   \ #name
+  \ #nowait_keyboard_active
+  \ #num_threads
+  \ #only_safe_parallelization
   \ #output_frequence
   \ #paste
   \ #paste_global
@@ -88,9 +101,12 @@ syn keyword brlCommand
   \ #pressure
   \ #readfile
   \ #reference_coordinates
+  \ #regular_graphic_grid
   \ #reset_part_name
+  \ #residue_limit
   \ #return
   \ #scenariofile
+  \ #screen_text
   \ #set_part_name
   \ #show_screen_results
   \ #sink
@@ -104,6 +120,7 @@ syn keyword brlCommand
   \ #store_regular_grid
   \ #surface_load
   \ #tank
+  \ #test_termoprop
   \ #transform
   \ #transform_end
   \ #variable_value
@@ -221,8 +238,11 @@ syn keyword brlVariables
   \ emittedradiation
   \ enthalpy
   \ exposedradiation
+  \ true
+  \ false
 " materials
 syn keyword brlVariables 
+  \ carbonsteel
   \ c1
   \ c2
   \ c3
@@ -236,6 +256,7 @@ syn keyword brlVariables
   \ ic5
   \ liquid
   \ n2
+  \ o2
   \ ss_316
  
 "
