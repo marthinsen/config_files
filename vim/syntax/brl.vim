@@ -212,6 +212,7 @@ syn keyword brlSubCommand
 " Global commands
 "
 syn match   brlAlphaKroll "@\(define\|readfile\|while\|if\|do\|debug\|@\|calc\|endif\|verify\)"
+syn match   brlAlphaKroll "@\(printtrack\|cylinder_center\|cylinder_squer_size\|cylinder_periphery\|regular_grid_resolution\)"
 syn keyword brlDollar 
   \ $boundaryconditions
   \ $brf-1.00
