@@ -129,22 +129,51 @@ syn keyword brlCommand
 " VessFire specific commands
 syn keyword brlCommand
   \ #back_pressure
+  \ #background_load
+  \ #basic_load
   \ #bdv_valve_location
+  \ #bend
   \ #blowdown_line
   \ #blowdown_valve
+  \ #circumferential_split
+  \ #connect_object_to
   \ #external_longitudinal_stress
+  \ #flow_parameters
   \ #fluid
+  \ #global_centre_divisor
+  \ #global_flow_divisor
   \ #heat_load
+  \ #initial_conditions_inventory
+  \ #initial_conditions_shell
+  \ #link
+  \ #max_axial_split
+  \ #max_radial_split
   \ #max_ruptured_pipes
+  \ #new_line
+  \ #outlet
+  \ #pcrelax
+  \ #peak_heat_length
   \ #peak_load
+  \ #phase_type
+  \ #pipe
   \ #process_safety_valve
   \ #psv_valve_location
+  \ #rad_calc_frequence
+  \ #radiation_include
+  \ #segment_definition_file
+  \ #source
   \ #stressFactor
   \ #stressType
+  \ #stressfactor
+  \ #stresstype
+  \ #test_pressure_profile
   \ #vessel
   \ #vessel_conditions
+  \ #vessel_flame_file
   \ #vessel_orientation
   \ #vessel_outside_conditions
+  \ #vessel_result_file
+  \ #vessfire_result_file
 
 " 
 " Subcommands
