@@ -1,13 +1,14 @@
 " Vim syntax file
-" Language: Brilliant code files
-" Maintainer: Eirik Marthinsen
-" Latest Revision: 29 April 2012
+" Language:     Brilliant code files
+" Maintainer:    Eirik Marthinsen
+" Latest Change: August 9, 2012
+" Version:       1
 
 if exists("b:current_syntax")
   finish
 endif
 
-setlocal iskeyword+=#,$,%,@
+setlocal iskeyword+=#,$,%,@-@,-
 syn case ignore
 
 " Equation errors
@@ -30,6 +31,14 @@ syn keyword brlMath contained
   \ sin
   \ sqrt
   \ tan
+  \ pow
+  \ exp
+  \ if
+  \ log
+  \ log10
+  \ asin
+  \ acos
+  \ atan
 syn keyword brlCommand 
   \ #adiabatic
   \ #adjust_size
@@ -125,6 +134,22 @@ syn keyword brlCommand
   \ #transform_end
   \ #variable_value
   \ #write_frequence
+  \ #strength_include
+  \ #radiation_calc_frequence
+  \ #radiation_beams_azimuth_polar
+  \ #gravity_include
+  \ #apply_pressure_gradient
+  \ #allow_phase_change
+  \ #differencing_scheme
+  \ #artificial_viscosity
+  \ #integration_period
+  \ #inactive_period
+  \ #inactive_criteria
+  \ #ignition_time
+  \ #flow_inactive
+  \ #relaxation_factor
+  \ #store_results
+
 
 " VessFire specific commands
 syn keyword brlCommand
@@ -240,8 +265,8 @@ syn keyword brlSubCommand
 "
 " Global commands
 "
-syn match   brlAlphaKroll "@\(define\|readfile\|while\|if\|do\|debug\|@\|calc\|endif\|verify\)"
-syn match   brlAlphaKroll "@\(printtrack\|cylinder_center\|cylinder_squer_size\|cylinder_periphery\|regular_grid_resolution\)"
+syn keyword brlAlphaKroll @define @readfile @while @if @do @debug @@ @calc @endif @verify
+syn keyword brlAlphaKroll @printtrack @cylinder_center @cylinder_squer_size @cylinder_periphery @regular_grid_resolution
 syn keyword brlDollar 
   \ $boundaryconditions
   \ $brf-1.00
@@ -264,12 +289,37 @@ syn keyword brlVariables
   \ air_temperature
   \ emissivity
   \ temperature
-syn keyword brlVariables  
+  \ permeability
+  \ permeability-x
+  \ permeability-y
+  \ permeability-x
+  \ darcy
+  \ darcy-x
+  \ darcy-y
+  \ darcy-z
   \ emittedradiation
   \ enthalpy
   \ exposedradiation
   \ true
   \ false
+  \ pressure_correction
+  \ eddydisipation
+  \ kineticEnergy
+  \ density
+  \ eddyViscosity
+  \ pressureCorrection
+  \ DisipationTerm
+  \ HeatTransferCoef
+  \ convHeat
+  \ diKi
+  \ FlowFlux
+  \ static_temperature
+  \ stagnation_pressure
+  \ mixLength
+  \ wallFunk
+  \ RadSinkSource
+  \ NetRadiation
+
 " materials
 syn keyword brlVariables 
   \ air
@@ -326,8 +376,8 @@ syn keyword brlVariables
 "
 " Comments
 "
-syn region	brlComment	start="//" skip="\\$" end="$" keepend
-syn region	brlComment	start="/\*" end="\*/"
+syn region	brlComment	start="//" skip="\\$" end="$" keepend contains=brlTodo
+syn region	brlComment	start="/\*" end="\*/" contains=brlTodo
 
 " 
 " integer number, or floating point number without a dot and with "f".
@@ -337,6 +387,9 @@ syn match	brlNumber		display contained "\d\+\(u\=l\{0,2}\|ll\=u\)\>"
 syn match	brlFloat		display contained "\d\+\.\d*\(e[-+]\=\d\+\)\=[fl]\="
 syn match	brlFloat		display contained "\.\d\+\(e[-+]\=\d\+\)\=[fl]\=\>"
 syn match	brlFloat		display contained "\d\+e[-+]\=\d\+[fl]\=\>"
+
+set noignorecase 
+syn keyword brlTodo contained TODO XXX FIXME
 
 let b:current_syntax = "brl"
 
@@ -352,3 +405,4 @@ hi def link brlAlphaKroll Define
 hi def link brlDollar     Statement
 hi def link brlError      Error
 hi def link brlVariables  Statement
+hi def link brlTodo       Todo
