@@ -289,6 +289,7 @@ syn keyword brlVariables
   \ air_temperature
   \ emissivity
   \ temperature
+  \ porosity
   \ permeability
   \ permeability-x
   \ permeability-y
