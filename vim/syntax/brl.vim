@@ -8,11 +8,11 @@ if exists("b:current_syntax")
   finish
 endif
 
-setlocal iskeyword+=#,$,%,@-@,-
+setlocal iskeyword+=#,$,%,@-@,-,(,)
 syn case ignore
 
 " Equation errors
-syn match brlError "\(=\)\@<!=\(=\)\@!"
+syn match brlError "\([=!><]\)\@<!=\(=\)\@!"
 
 
 " 
@@ -319,6 +319,19 @@ syn keyword brlVariables
   \ wallFunk
   \ RadSinkSource
   \ NetRadiation
+  \ continuityError
+
+"
+" "Comments"
+"
+syn keyword brlComment
+  \ Variable-name
+  \ Relaxation-factor
+  \ Active
+  \ (Modify\)
+  \ (Information)
+  \ Store
+  \ Variable-type
 
 " materials
 syn keyword brlVariables 
