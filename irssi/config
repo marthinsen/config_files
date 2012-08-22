@@ -1,0 +1,62 @@
+settings = {
+  core = {
+    real_name = "Eirik Marthinsen";
+    nick = "eirik";
+    timestamp_format = "%H:%M:%S";
+  };
+  "fe-text" = { actlist_sort = "refnum"; };
+  "perl/core/scripts" = {
+    awl_block = "-14";
+    awl_display_key = "$Q%K|$N%n $H$C$S";
+    awl_display_key_active = "$Q%K|$N%n $H%U$C%n$S";
+    awl_display_nokey = "[$N]$H$C$S";
+  };
+};
+hilights = ( { text = "eirik"; nick = "yes"; word = "yes"; } );
+statusbar = {
+  default = {
+    window = {
+      items = {
+        barstart = { priority = "100"; };
+        time = { };
+        user = { };
+        window = { };
+        window_empty = { };
+        lag = { priority = "-1"; };
+        more = { priority = "-1"; alignment = "right"; };
+        barend = { priority = "100"; alignment = "right"; };
+        act = { };
+      };
+    };
+    awl_0 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_0 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+  };
+};
+windows = {
+  1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
+  2 = {
+    items = (
+      { type = "CHANNEL"; chat_type = "IRC"; name = "#dev"; tag = "10"; }
+    );
+  };
+  3 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#irearth";
+        tag = "efnet";
+      }
+    );
+  };
+  4 = { name = "hilight"; sticky = "yes"; };
+};
+mainwindows = {
+  1 = { first_line = "8"; lines = "59"; };
+  4 = { first_line = "1"; lines = "7"; };
+};
