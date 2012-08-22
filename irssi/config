@@ -223,8 +223,8 @@ settings = {
   };
   "fe-text" = { actlist_sort = "refnum"; };
   "perl/core/scripts" = {
-    awl_display_key = " $Q $H$C$S ";
-    awl_display_key_active = "%0$Q %y$H$C$S%n";
+    awl_display_key = " $Q $H$C $S";
+    awl_display_key_active = "%0 %Y$Q $H$C $S%n";
     awl_display_nokey = "[$N]$H$C$S";
     awl_separator = "%0\\ %n";
   };
