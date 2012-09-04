@@ -14,5 +14,6 @@
   lo = log --decorate --abbrev-commit --date=relative
   l = log --decorate --oneline --graph
   co = checkout
+	slap = blame -w
 [apply]
 	whitespace = nowarn
