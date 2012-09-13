@@ -10,4 +10,4 @@ workdir=$(cygpath -w $PWD)
 cd $(cygpath -u $brlpath)
 echo $workdir | iconv -t ISO-8859-1 | cat - Brilliant.ini > tmp && mv tmp Brilliant.ini
 ./Brilliant.exe %nowait $*
-sed -i '1d' Brilliant.ini
+sed -i '1,1d' Brilliant.ini

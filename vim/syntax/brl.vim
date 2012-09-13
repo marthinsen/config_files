@@ -8,7 +8,7 @@ if exists("b:current_syntax")
   finish
 endif
 
-setlocal iskeyword+=#,$,%,@-@,-,(,)
+setlocal iskeyword+=#,$,%,@-@,- "(,)
 syn case ignore
 
 " Equation errors
@@ -24,24 +24,27 @@ syn match	brlEquation	"=[^=]\+;" contains=brlMath
 " Keywords
 "
 syn keyword brlMath contained
+  \ acos
+  \ asin
+  \ atan
   \ cos
+  \ exp
+  \ log
+  \ log10
   \ max
   \ min
-  \ pi
+  \ PI
+  \ pow
   \ sin
   \ sqrt
   \ tan
-  \ pow
-  \ exp
-  \ if
-  \ log
-  \ log10
-  \ asin
-  \ acos
-  \ atan
+
 syn keyword brlCommand 
   \ #adiabatic
   \ #adjust_size
+  \ #allow_phase_change
+  \ #apply_pressure_gradient
+  \ #artificial_viscosity
   \ #average
   \ #block 
   \ #brf2_input_file
@@ -65,24 +68,33 @@ syn keyword brlCommand
   \ #cylinder_squer_size
   \ #database_file
   \ #database_path
+  \ #differencing_scheme
   \ #displacement
   \ #end_of_file
   \ #endcopy
   \ #endcopyincremental
+  \ #expandinnerring
+  \ #expandouterring
   \ #extern_grid
   \ #extract
   \ #fan
   \ #fan_end
   \ #fixed_value
   \ #flame
+  \ #flow_inactive
   \ #global_coordinates
   \ #glview_format
   \ #glview_name
   \ #graphicfile
+  \ #gravity_include
   \ #gridfile
   \ #heat_transfer
   \ #hexahedron
+  \ #ignition_time
+  \ #inactive_criteria
+  \ #inactive_period
   \ #initial_conditions
+  \ #integration_period
   \ #local_coordinates
   \ #material
   \ #matrix_gmres_parameter
@@ -108,9 +120,12 @@ syn keyword brlCommand
   \ #point_load
   \ #polar
   \ #pressure
+  \ #radiation_beams_azimuth_polar
+  \ #radiation_calc_frequence
   \ #readfile
   \ #reference_coordinates
   \ #regular_graphic_grid
+  \ #relaxation_factor
   \ #reset_part_name
   \ #residue_limit
   \ #return
@@ -127,6 +142,8 @@ syn keyword brlCommand
   \ #split_cv
   \ #spot
   \ #store_regular_grid
+  \ #store_results
+  \ #strength_include
   \ #surface_load
   \ #tank
   \ #test_termoprop
@@ -134,21 +151,6 @@ syn keyword brlCommand
   \ #transform_end
   \ #variable_value
   \ #write_frequence
-  \ #strength_include
-  \ #radiation_calc_frequence
-  \ #radiation_beams_azimuth_polar
-  \ #gravity_include
-  \ #apply_pressure_gradient
-  \ #allow_phase_change
-  \ #differencing_scheme
-  \ #artificial_viscosity
-  \ #integration_period
-  \ #inactive_period
-  \ #inactive_criteria
-  \ #ignition_time
-  \ #flow_inactive
-  \ #relaxation_factor
-  \ #store_results
 
 
 " VessFire specific commands
@@ -255,6 +257,7 @@ syn keyword brlSubCommand
   \ %volumerate
   \ %wall
   \ %windspeed
+
 " VessFire specific subcommands
 syn keyword brlSubCommand
   \ %corTol
@@ -265,8 +268,23 @@ syn keyword brlSubCommand
 "
 " Global commands
 "
-syn keyword brlAlphaKroll @define @readfile @while @if @do @debug @@ @calc @endif @verify
-syn keyword brlAlphaKroll @printtrack @cylinder_center @cylinder_squer_size @cylinder_periphery @regular_grid_resolution
+syn keyword brlAlphaKroll 
+  \ @@ 
+  \ @calc 
+  \ @cylinder_center 
+  \ @cylinder_periphery 
+  \ @cylinder_squer_size 
+  \ @debug 
+  \ @define 
+  \ @do 
+  \ @endif 
+  \ @if 
+  \ @printtrack 
+  \ @readfile 
+  \ @regular_grid_resolution
+  \ @verify
+  \ @while 
+
 syn keyword brlDollar 
   \ $boundaryconditions
   \ $brf-1.00
@@ -281,67 +299,71 @@ syn keyword brlDollar
 " Variables (?) 
 "
 syn keyword brlVariables 
+  \ DisipationTerm
+  \ FlowFlux
+  \ HeatTransferCoef
+  \ NetRadiation
   \ Pressure
+  \ RadSinkSource
   \ Vx-velocity
   \ Vy-velocity
   \ Vz-velocity
   \ absorption
   \ air_temperature
-  \ emissivity
-  \ temperature
-  \ porosity
-  \ permeability
-  \ permeability-x
-  \ permeability-y
-  \ permeability-x
+  \ continuityError
+  \ convHeat
   \ darcy
   \ darcy-x
   \ darcy-y
   \ darcy-z
+  \ density
+  \ diKi
+  \ eddyViscosity
+  \ eddydisipation
+  \ emissivity
   \ emittedradiation
   \ enthalpy
   \ exposedradiation
-  \ true
   \ false
-  \ pressure_correction
-  \ eddydisipation
   \ kineticEnergy
-  \ density
-  \ eddyViscosity
-  \ pressureCorrection
-  \ DisipationTerm
-  \ HeatTransferCoef
-  \ convHeat
-  \ diKi
-  \ FlowFlux
-  \ static_temperature
-  \ stagnation_pressure
   \ mixLength
+  \ permeability
+  \ permeability-x
+  \ permeability-y
+  \ porosity
+  \ pressureCorrection
+  \ pressure_correction
+  \ stagnation_pressure
+  \ static_temperature
+  \ temperature
+  \ true
   \ wallFunk
-  \ RadSinkSource
-  \ NetRadiation
-  \ continuityError
 
 "
 " "Comments"
 "
 syn keyword brlComment
-  \ Variable-name
-  \ Relaxation-factor
-  \ Active
-  \ (Modify\)
   \ (Information)
+  \ (Modify)
+  \ Active
+  \ Relaxation-factor
   \ Store
+  \ Variable-name
   \ Variable-type
 
 " materials
 syn keyword brlVariables 
   \ air
   \ c1
+  \ c10
   \ c2
   \ c3
   \ c4
   \ c5
+  \ c6
+  \ c7
+  \ c8
+  \ c9
   \ carbonsteel
   \ carbonwool_128
   \ carbonwool_64

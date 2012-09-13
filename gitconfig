@@ -15,5 +15,8 @@
   l = log --decorate --oneline --graph
   co = checkout
 	slap = blame -w
+  b = branch -v
+  fp = format-patch -k -M -N
+  bc = branch --contains
 [apply]
 	whitespace = nowarn
