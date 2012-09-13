@@ -228,12 +228,13 @@ settings = {
     awl_display_nokey = "[$N]$H$C$S";
     awl_separator = "\\";
   };
+  "fe-common/core" = { emphasis_replace = "yes"; theme = "default"; };
 };
 windows = {
   1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
-  2 = { name = "hilight"; sticky = "yes"; };
+  9 = { name = "hilight"; sticky = "yes"; };
 };
 mainwindows = {
   1 = { first_line = "8"; lines = "62"; };
-  2 = { first_line = "1"; lines = "7"; };
+  9 = { first_line = "1"; lines = "7"; };
 };
