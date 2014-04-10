@@ -55,11 +55,6 @@ export PS1="$BLUE$BOLD\u$RED@$BLUE\h$RED:$YELLOW\W$RED\$ $RETURN"
 LS_COLORS="di=01;35" 
 export LS_COLORS
 
-# Add $HOME/bin/ to path
-if [[ -d "$HOME/bin" ]];  then
-  PATH="$HOME/bin:$PATH"
-fi
-
 # Make sure file permissions after git push is preserved
 umask 000
 
