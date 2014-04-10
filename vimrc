@@ -259,3 +259,6 @@ let g:tex_flavor='latex'
 autocmd FileType gitcommit setlocal spell
 
 set undodir=~/.vim/undodir
+
+" Close NERDTree when opening file
+let NERDTreeQuitOnOpen = 1
