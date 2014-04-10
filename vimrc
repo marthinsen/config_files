@@ -43,6 +43,8 @@ filetype off
     Bundle "tomtom/tlib_vim"
     Bundle "garbas/vim-snipmate"
 
+    " PHP
+    Bundle "madflow/vim-php"
 
     if iCanHazVundle == 0
         echo "Installing Bundles, please ignore key map error messages"
@@ -252,10 +254,6 @@ let g:tex_flavor='latex'
 
 " Making seach case insensitive as long as just lower case letters is used
 :set smartcase
-
-
-" Put swapfiles in separate folder
-set directory=$VIM//
 
 " Turn on spell checking for git commit
 autocmd FileType gitcommit setlocal spell
