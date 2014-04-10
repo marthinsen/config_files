@@ -7,7 +7,7 @@
   autocrlf = input
 	editor = vim
 [alias]
-  s = status
+  s = status -sb
   ci = commit
   cim = commit -m 
   cima = commit -a -m
@@ -20,3 +20,5 @@
   bc = branch --contains
 [apply]
 	whitespace = nowarn
+[log]
+	decorate = short
