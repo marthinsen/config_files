@@ -67,6 +67,7 @@ syn keyword brlCommand
   \ #cylinder_resolution
   \ #cylinder_squer_size
   \ #database_file
+  \ #database_name
   \ #database_path
   \ #differencing_scheme
   \ #displacement
@@ -86,7 +87,8 @@ syn keyword brlCommand
   \ #glview_format
   \ #glview_name
   \ #graphicfile
-  \ #gravity_include
+  \ #gravity_enabled
+  \ #gravity_direction
   \ #gridfile
   \ #heat_transfer
   \ #hexahedron
@@ -121,6 +123,8 @@ syn keyword brlCommand
   \ #polar
   \ #pressure
   \ #radiation_beams_azimuth_polar
+  \ #radiation_beams_azimuth
+  \ #radiation_beams_polar
   \ #radiation_calc_frequence
   \ #readfile
   \ #reference_coordinates
@@ -139,6 +143,7 @@ syn keyword brlCommand
   \ #source_end
   \ #source_sink
   \ #source_sink_end
+  \ #sphere
   \ #split_cv
   \ #spot
   \ #store_regular_grid
@@ -277,6 +282,7 @@ syn keyword brlAlphaKroll
   \ @debug 
   \ @define 
   \ @do 
+  \ @else
   \ @endif 
   \ @if 
   \ @printtrack 
@@ -335,7 +341,9 @@ syn keyword brlVariables
   \ pressure_correction
   \ stagnation_pressure
   \ static_temperature
+  \ strength
   \ temperature
+  \ volumeFraction
   \ true
   \ wallFunk
 
@@ -418,11 +426,11 @@ syn region	brlComment	start="/\*" end="\*/" contains=brlTodo
 " 
 " integer number, or floating point number without a dot and with "f".
 "
-syn match	brlNumbers	display transparent "\<\d\|\.\d" contains=brlNumber,brlFloat 
+syn match	brlNumbers	display transparent "\<-\?\d\|-\?\.\d\?" contains=brlNumber,brlFloat
 syn match	brlNumber		display contained "\d\+\(u\=l\{0,2}\|ll\=u\)\>"
-syn match	brlFloat		display contained "\d\+\.\d*\(e[-+]\=\d\+\)\=[fl]\="
-syn match	brlFloat		display contained "\.\d\+\(e[-+]\=\d\+\)\=[fl]\=\>"
-syn match	brlFloat		display contained "\d\+e[-+]\=\d\+[fl]\=\>"
+syn match	brlFloat		display contained "\-\?\d\+\.\d*\(e[-+]\=\d\+\)\=[fl]\="
+syn match	brlFloat		display contained "\-\?\.\d\+\(e[-+]\=\d\+\)\=[fl]\=\>"
+syn match	brlFloat		display contained "\-\?\d\+e[-+]\=\d\+[fl]\=\>"
 
 set noignorecase 
 syn keyword brlTodo contained TODO XXX FIXME

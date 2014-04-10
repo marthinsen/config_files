@@ -1,13 +1,63 @@
-" An example for a vimrc file.
-"
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2008 Dec 17
-"
-" To use it, copy it to
-"     for Unix and OS/2:  ~/.vimrc
-"	      for Amiga:  s:.vimrc
-"  for MS-DOS and Win32:  $VIM\_vimrc
-"	    for OpenVMS:  sys$login:.vimrc
+" Eiriks vimrc file
+
+set nocompatible
+filetype off
+
+" Setting up Vundle - the vim plugin bundler
+    let iCanHazVundle=1
+    let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+    if !filereadable(vundle_readme)
+        echo "Installing Vundle.."
+        echo ""
+        silent !mkdir -p ~/.vim/bundle
+        silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+        let iCanHazVundle=0
+    endif
+    set rtp+=~/.vim/bundle/vundle/
+    call vundle#rc()
+    Bundle 'gmarik/vundle'
+
+    " Awesome syntax checker. See :h syntastic for help
+    Bundle 'scrooloose/syntastic'
+    
+    " File tree
+    Bundle 'scrooloose/nerdtree'
+
+    " Code commenter
+    Bundle 'scrooloose/nerdcommenter'
+
+    " Autoclose brackets
+    Bundle 'Townk/vim-autoclose'
+
+    " New colorsheme
+    Bundle 'altercation/vim-colors-solarized'
+
+    " Git wrapper inside vim
+    Bundle 'https://github.com/tpope/vim-fugitive'
+
+    " C.vim
+    Bundle 'c.vim'
+
+    " Snipmate + dependencies
+    Bundle "MarcWeber/vim-addon-mw-utils"
+    Bundle "tomtom/tlib_vim"
+    Bundle "garbas/vim-snipmate"
+
+
+    if iCanHazVundle == 0
+        echo "Installing Bundles, please ignore key map error messages"
+        echo ""
+        :BundleInstall
+    endif
+" Setting up Vundle - the vim plugin bundler end
+
+filetype on
+
+syntax enable
+set background=dark
+colorscheme solarized
+
+map <silent> <C-n> :NERDTreeToggle<CR>
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
@@ -158,8 +208,6 @@ set tabstop=2
 set expandtab
 set shiftwidth=2
 
-colorscheme desert_EM
-
 " Text wrapping according to 
 " http://vim.wikia.com/wiki/Word_wrap_without_line_breaks
 :set wrap
@@ -208,3 +256,8 @@ let g:tex_flavor='latex'
 
 " Put swapfiles in separate folder
 set directory=$VIM//
+
+" Turn on spell checking for git commit
+autocmd FileType gitcommit setlocal spell
+
+set undodir=~/.vim/undodir

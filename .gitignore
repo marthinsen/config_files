@@ -1,2 +1,5 @@
 *.swp
 *.netrwhist
+vim/bundle/*
+!bundle/vundle
+bin/multiply-z.py
