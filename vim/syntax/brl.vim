@@ -87,8 +87,8 @@ syn keyword brlCommand
   \ #glview_format
   \ #glview_name
   \ #graphicfile
-  \ #gravity_enabled
   \ #gravity_direction
+  \ #gravity_enabled
   \ #gridfile
   \ #heat_transfer
   \ #hexahedron
@@ -122,10 +122,11 @@ syn keyword brlCommand
   \ #point_load
   \ #polar
   \ #pressure
-  \ #radiation_beams_azimuth_polar
   \ #radiation_beams_azimuth
+  \ #radiation_beams_azimuth_polar
   \ #radiation_beams_polar
   \ #radiation_calc_frequence
+  \ #radiation_include
   \ #readfile
   \ #reference_coordinates
   \ #regular_graphic_grid
@@ -148,6 +149,7 @@ syn keyword brlCommand
   \ #spot
   \ #store_regular_grid
   \ #store_results
+  \ #strength_active
   \ #strength_include
   \ #surface_load
   \ #tank
@@ -169,6 +171,8 @@ syn keyword brlCommand
   \ #blowdown_valve
   \ #circumferential_split
   \ #connect_object_to
+  \ #continueonthermocrash
+  \ #densitybasedthermo
   \ #external_longitudinal_stress
   \ #flow_parameters
   \ #fluid
@@ -177,12 +181,16 @@ syn keyword brlCommand
   \ #heat_load
   \ #initial_conditions_inventory
   \ #initial_conditions_shell
+  \ #join_concentration_difference
+  \ #join_maximal_volume
   \ #link
   \ #max_axial_split
   \ #max_radial_split
   \ #max_ruptured_pipes
+  \ #mixedmultiphasestate
   \ #new_line
   \ #outlet
+  \ #output_interpolated_velocities
   \ #pcrelax
   \ #peak_heat_length
   \ #peak_load
@@ -191,14 +199,21 @@ syn keyword brlCommand
   \ #process_safety_valve
   \ #psv_valve_location
   \ #rad_calc_frequence
-  \ #radiation_include
+  \ #reactivate_criteria
+  \ #ref_point_current_model
+  \ #ref_point_other_model
   \ #segment_definition_file
   \ #source
-  \ #stressFactor
-  \ #stressType
+  \ #split_concentration_difference
+  \ #split_concentration_material
+  \ #split_debounce_steps
+  \ #split_minimum_volume
+  \ #strengthmodel
   \ #stressfactor
   \ #stresstype
   \ #test_pressure_profile
+  \ #thermoprop_model
+  \ #timestepwhenactivated
   \ #vessel
   \ #vessel_conditions
   \ #vessel_flame_file
@@ -305,47 +320,57 @@ syn keyword brlDollar
 " Variables (?) 
 "
 syn keyword brlVariables 
-  \ DisipationTerm
-  \ FlowFlux
-  \ HeatTransferCoef
-  \ NetRadiation
-  \ Pressure
-  \ RadSinkSource
-  \ Vx-velocity
-  \ Vy-velocity
-  \ Vz-velocity
   \ absorption
   \ air_temperature
-  \ continuityError
-  \ convHeat
+  \ continuityerror
+  \ convheat
+  \ crackincreasement
+  \ crackpropagation
   \ darcy
   \ darcy-x
   \ darcy-y
   \ darcy-z
   \ density
-  \ diKi
-  \ eddyViscosity
+  \ diki
+  \ disipationterm
   \ eddydisipation
+  \ eddyviscosity
   \ emissivity
   \ emittedradiation
   \ enthalpy
   \ exposedradiation
   \ false
-  \ kineticEnergy
-  \ mixLength
+  \ flowflux
+  \ heattransfercoef
+  \ jintegralsize
+  \ kineticenergy
+  \ mixlength
+  \ netradiation
+  \ numberoftriangles
   \ permeability
   \ permeability-x
   \ permeability-y
   \ porosity
-  \ pressureCorrection
+  \ pressure
   \ pressure_correction
+  \ pressurecorrection
+  \ radsinksource
+  \ solidvfr
   \ stagnation_pressure
   \ static_temperature
   \ strength
+  \ surfacetriangles
   \ temperature
-  \ volumeFraction
   \ true
-  \ wallFunk
+  \ valveinletrate
+  \ valvereleaserate
+  \ vaporvfr
+  \ viscosity
+  \ volumefraction
+  \ vx-velocity
+  \ vy-velocity
+  \ vz-velocity
+  \ wallfunk
 
 "
 " "Comments"
@@ -358,6 +383,17 @@ syn keyword brlComment
   \ Store
   \ Variable-name
   \ Variable-type
+
+" models
+syn keyword brlVariables
+  \ conduction
+  \ dispersion
+  \ fire
+  \ flow
+  \ multiphase
+  \ porosityflow
+  \ radiation
+  \ strength
 
 " materials
 syn keyword brlVariables 
@@ -405,6 +441,7 @@ syn keyword brlVariables
   \ paroc_110
   \ polyurethane
   \ rockwool
+  \ soil
   \ soilmodifiedmohr
   \ ss_316
   \ ss_6mo
@@ -427,10 +464,10 @@ syn region	brlComment	start="/\*" end="\*/" contains=brlTodo
 " integer number, or floating point number without a dot and with "f".
 "
 syn match	brlNumbers	display transparent "\<-\?\d\|-\?\.\d\?" contains=brlNumber,brlFloat
-syn match	brlNumber		display contained "\d\+\(u\=l\{0,2}\|ll\=u\)\>"
-syn match	brlFloat		display contained "\-\?\d\+\.\d*\(e[-+]\=\d\+\)\=[fl]\="
-syn match	brlFloat		display contained "\-\?\.\d\+\(e[-+]\=\d\+\)\=[fl]\=\>"
-syn match	brlFloat		display contained "\-\?\d\+e[-+]\=\d\+[fl]\=\>"
+syn match	brlNumber		display contained "\-\?\d\+g\=\>"
+syn match	brlFloat		display contained "\-\?\d\+\.\d*\(e[-+]\=\d\+\)\=g\="
+syn match	brlFloat		display contained "\-\?\.\d\+\(e[-+]\=\d\+\)\=g\=\>"
+syn match	brlFloat		display contained "\-\?\d\+e[-+]\=\d\+g\=\>"
 
 set noignorecase 
 syn keyword brlTodo contained TODO XXX FIXME
