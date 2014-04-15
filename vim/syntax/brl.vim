@@ -1,8 +1,8 @@
 " Vim syntax file
-" Language:     Brilliant code files
+" Language:      Brilliant code files
 " Maintainer:    Eirik Marthinsen
-" Latest Change: August 9, 2012
-" Version:       1
+" Latest Change: Aprinl 15, 2014
+" Version:       1.1
 
 if exists("b:current_syntax")
   finish
@@ -60,6 +60,7 @@ syn keyword brlCommand
   \ #courant_number
   \ #current_model_area
   \ #cv_connection_tolerance
+  \ #crack_define
   \ #cylinder
   \ #cylinder_angle
   \ #cylinder_center
@@ -221,6 +222,16 @@ syn keyword brlCommand
   \ #vessel_outside_conditions
   \ #vessel_result_file
   \ #vessfire_result_file
+  \ #deform_geometry
+
+" 
+" CoatSim specific commands
+"
+syn keyword brlCommand
+  \ #global_load
+  \ #inlet
+  \ #radiativeheater
+  \ #void
 
 " 
 " Subcommands
@@ -285,6 +296,16 @@ syn keyword brlSubCommand
   \ %prodTol
   \ %shell
 
+" CoatSim specific sub commands
+syn keyword brlSubCommand
+  \ %peaklength
+  \ %flowdivisor
+  \ %centredivisor
+  \ %roughness
+  \ %initvelo
+  \ %relloc
+  \ %solid
+
 "
 " Global commands
 "
@@ -315,6 +336,7 @@ syn keyword brlDollar
   \ $file_name 
   \ $model
   \ $vessFire
+  \ $coatsim
 
 "
 " Variables (?) 
