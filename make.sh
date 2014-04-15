@@ -32,6 +32,9 @@ fi
 if [ -f ~/.irssi ] ; then
   mv ~/.irssi ~/.irssi.bak
 fi
+if [ -f ~/.ctags ] ; then
+  mv ~/.ctags ~/.ctags.bak
+fi
 
 echo "Creating symlinks to new ones"
 
@@ -46,3 +49,4 @@ ln -s $( cd "$( dirname "$0" )" && pwd )/bin ~/bin
 ln -s $( cd "$( dirname "$0" )" && pwd )/screenrc ~/.screenrc
 ln -s $( cd "$( dirname "$0" )" && pwd )/git-completion.sh ~/.git-completion.sh
 ln -s $( cd "$( dirname "$0" )" && pwd )/irssi ~/.irssi
+ln -s $( cd "$( dirname "$0" )" && pwd )/ctags ~/.ctags
