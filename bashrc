@@ -34,6 +34,7 @@ fi
 export EDITOR=vim               # Set vim to default editor
 export LESS='-R'                # Correct escape characters 
 export TERM=xterm-256color      # Get 256 colors in vim (?)
+[ -n "$TMUX" ] && export TERM=screen-256color
 
 # ==== alias for colors ========
 BLACK="\[$(tput setaf 0)\]"
