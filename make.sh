@@ -35,6 +35,9 @@ fi
 if [ -f ~/.ctags ] ; then
   mv ~/.ctags ~/.ctags.bak
 fi
+if [ -f ~/.tmux.conf ] ; then
+  mv ~/.tmux.conf.bak ~/.tmux.conf.bak
+fi
 
 echo "Creating symlinks to new ones"
 
@@ -50,3 +53,4 @@ ln -s $( cd "$( dirname "$0" )" && pwd )/screenrc ~/.screenrc
 ln -s $( cd "$( dirname "$0" )" && pwd )/git-completion.sh ~/.git-completion.sh
 ln -s $( cd "$( dirname "$0" )" && pwd )/irssi ~/.irssi
 ln -s $( cd "$( dirname "$0" )" && pwd )/ctags ~/.ctags
+ln -s $( cd "$( dirname "$0" )" && pwd )/tmux.conf ~/.tmux.conf
