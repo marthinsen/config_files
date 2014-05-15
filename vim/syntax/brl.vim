@@ -298,12 +298,19 @@ syn keyword brlSubCommand
 
 " CoatSim specific sub commands
 syn keyword brlSubCommand
-  \ %peaklength
-  \ %flowdivisor
+  \ %absorptioncoefficient
   \ %centredivisor
-  \ %roughness
+  \ %flowdivisor
+  \ %heaterwall1
+  \ %heatpercasette
   \ %initvelo
+  \ %lossfactor
+  \ %numberofcasettes
+  \ %peaklength
+  \ %reducerlength
+  \ %reducerresolution
   \ %relloc
+  \ %roughness
   \ %solid
 
 "
@@ -363,7 +370,10 @@ syn keyword brlVariables
   \ exposedradiation
   \ false
   \ flowflux
+  \ flowmodelname
   \ heattransfercoef
+  \ initialopening
+  \ injectflow
   \ jintegralsize
   \ kineticenergy
   \ mixlength
@@ -376,6 +386,7 @@ syn keyword brlVariables
   \ pressure
   \ pressure_correction
   \ pressurecorrection
+  \ propagateangle
   \ radsinksource
   \ solidvfr
   \ stagnation_pressure
