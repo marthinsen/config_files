@@ -38,6 +38,9 @@ filetype off
     " C.vim
     Bundle 'c.vim'
 
+    " cscope key bindings
+    Bundle "steffanc/cscopemaps.vim"
+
     " Snipmate + dependencies
     Bundle "MarcWeber/vim-addon-mw-utils"
     Bundle "tomtom/tlib_vim"
