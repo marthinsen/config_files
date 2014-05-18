@@ -270,3 +270,8 @@ let NERDTreeQuitOnOpen = 1
 autocmd FileType c,cpp set number nowrap ts=2 sw=2 expandtab smarttab
 autocmd FileType python set number nowrap ts=2 sw=2 expandtab smarttab
 autocmd FileType php set number nowrap ts=4 sw=4 smarttab
+
+let &t_ti.="\e[1 q"
+let &t_SI.="\e[5 q"
+let &t_EI.="\e[1 q"
+let &t_te.="\e[0 q"
