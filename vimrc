@@ -180,7 +180,7 @@ set fdm=marker
 set nofen
 colo torte
 
-map <silent> <F2> :if &background == "light"<CR>set background=dark<CR>else<CR>setbackground=light<CR>endif<CR>
+map <silent> <F2> :if &background == "light"<CR>set background=dark<CR>else<CR>set background=light<CR>endif<CR>
 noremap <F3> :res<CR>
 noremap <F4> <C-W>=
 map <F5> :set invhlsearch<CR>
