@@ -59,9 +59,6 @@ export LS_COLORS
 # Make sure file permissions after git push is preserved
 umask 000
 
-# Use git-completion
-source ~/.git-completion.sh
-
 # Bash history
 export HISTSIZE=10000
 export HISTFILESIZE=10000
