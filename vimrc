@@ -258,7 +258,7 @@ filetype indent on
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
 
-" Making seach case insensitive as long as just lower case letters is used
+" Making search case insensitive as long as just lower case letters is used
 :set smartcase
 
 " Turn on spell checking for git commit
