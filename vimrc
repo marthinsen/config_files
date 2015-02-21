@@ -33,7 +33,10 @@ filetype off
     Bundle 'altercation/vim-colors-solarized'
 
     " Git wrapper inside vim
-    Bundle 'https://github.com/tpope/vim-fugitive'
+    Bundle 'tpope/vim-fugitive'
+
+    " Powerline
+    Plugin 'bling/vim-airline'
 
     " C.vim
     Bundle 'c.vim'
@@ -275,3 +278,8 @@ let &t_ti.="\e[1 q"
 let &t_SI.="\e[5 q"
 let &t_EI.="\e[1 q"
 let &t_te.="\e[0 q"
+
+" Strictly necessary for Powerline
+set encoding=utf-8
+" Powerline font (Download from https://github.com/powerline/fonts)
+let g:airline_powerline_fonts = 1
