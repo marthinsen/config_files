@@ -23,9 +23,6 @@ fi
 if [ -d ~/.vim ] ; then
   mv ~/.vim ~/.vim.bak
 fi
-if [ -d ~/bin ] ; then
-  mv ~/bin ~/bin.bak
-fi
 if [ -f ~/.screenrc ] ; then
   mv ~/.screenrc ~/.screenrc.bak
 fi
@@ -48,7 +45,6 @@ ln -s $( cd "$( dirname "$0" )" && pwd )/bash_aliases ~/.bash_aliases
 ln -s $( cd "$( dirname "$0" )" && pwd )/bash_functions ~/.bash_functions
 ln -s $( cd "$( dirname "$0" )" && pwd )/vimrc ~/.vimrc
 ln -s $( cd "$( dirname "$0" )" && pwd )/vim ~/.vim
-ln -s $( cd "$( dirname "$0" )" && pwd )/bin ~/bin
 ln -s $( cd "$( dirname "$0" )" && pwd )/screenrc ~/.screenrc
 ln -s $( cd "$( dirname "$0" )" && pwd )/git-completion.sh ~/.git-completion.sh
 ln -s $( cd "$( dirname "$0" )" && pwd )/irssi ~/.irssi
