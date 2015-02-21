@@ -52,6 +52,9 @@ filetype off
     " PHP
     Bundle "madflow/vim-php"
 
+    " Python
+    Bundle "nvie/vim-flake8"
+
     if iCanHazVundle == 0
         echo "Installing Bundles, please ignore key map error messages"
         echo ""
@@ -271,7 +274,7 @@ let NERDTreeQuitOnOpen = 1
 
 " Line numbers for code files
 autocmd FileType c,cpp set number nowrap ts=2 sw=2 expandtab smarttab
-autocmd FileType python set number nowrap ts=2 sw=2 expandtab smarttab
+autocmd FileType python set number nowrap ts=4 sw=4 expandtab smarttab
 autocmd FileType php set number nowrap ts=4 sw=4 smarttab
 
 let &t_ti.="\e[1 q"
