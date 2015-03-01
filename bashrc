@@ -62,3 +62,8 @@ umask 000
 # Bash history
 export HISTSIZE=10000
 export HISTFILESIZE=10000
+
+# Cygwin specific
+if [ $(uname -o) == "Cygwin" ]; then
+  export BROWSER=cygstart
+fi
