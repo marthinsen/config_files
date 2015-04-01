@@ -58,9 +58,9 @@ syn keyword brlCommand
   \ #copy_global_point
   \ #copyincremental
   \ #courant_number
+  \ #crack_define
   \ #current_model_area
   \ #cv_connection_tolerance
-  \ #crack_define
   \ #cylinder
   \ #cylinder_angle
   \ #cylinder_center
@@ -94,6 +94,7 @@ syn keyword brlCommand
   \ #heat_transfer
   \ #hexahedron
   \ #ignition_time
+  \ #in_situ_stress
   \ #inactive_criteria
   \ #inactive_period
   \ #initial_conditions
@@ -355,6 +356,7 @@ syn keyword brlVariables
   \ convheat
   \ crackincreasement
   \ crackpropagation
+  \ criticalstress
   \ darcy
   \ darcy-x
   \ darcy-y
@@ -369,6 +371,7 @@ syn keyword brlVariables
   \ enthalpy
   \ exposedradiation
   \ false
+  \ fixangle
   \ flowflux
   \ flowmodelname
   \ heattransfercoef
@@ -376,6 +379,7 @@ syn keyword brlVariables
   \ injectflow
   \ jintegralsize
   \ kineticenergy
+  \ maxfrontlinelength
   \ mixlength
   \ netradiation
   \ numberoftriangles
@@ -393,7 +397,14 @@ syn keyword brlVariables
   \ static_temperature
   \ strength
   \ surfacetriangles
+  \ sxx
+  \ sxy
+  \ sxz
+  \ syy
+  \ syz
+  \ szz
   \ temperature
+  \ tipintegral
   \ true
   \ valveinletrate
   \ valvereleaserate
@@ -404,6 +415,9 @@ syn keyword brlVariables
   \ vy-velocity
   \ vz-velocity
   \ wallfunk
+  \ x
+  \ y
+  \ z
 
 "
 " "Comments"
