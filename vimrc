@@ -55,6 +55,9 @@ filetype off
     " Python
     Bundle "nvie/vim-flake8"
 
+    " Go
+    Bundle "fatih/vim-go"
+
     if iCanHazVundle == 0
         echo "Installing Bundles, please ignore key map error messages"
         echo ""
