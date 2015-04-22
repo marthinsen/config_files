@@ -35,6 +35,9 @@ fi
 if [ -f ~/.tmux.conf ] ; then
   mv ~/.tmux.conf.bak ~/.tmux.conf.bak
 fi
+if [ -f ~/.colordiffrc ] ; then
+  mv ~/.colordiffrc ~/.colordiffrc.bak
+fi
 
 echo "Creating symlinks to new ones"
 
@@ -50,3 +53,4 @@ ln -s $( cd "$( dirname "$0" )" && pwd )/git-completion.sh ~/.git-completion.sh
 ln -s $( cd "$( dirname "$0" )" && pwd )/irssi ~/.irssi
 ln -s $( cd "$( dirname "$0" )" && pwd )/ctags ~/.ctags
 ln -s $( cd "$( dirname "$0" )" && pwd )/tmux.conf ~/.tmux.conf
+ln -s $( cd "$( dirname "$0" )" && pwd )/colordiffrc ~/.colordiffrc
