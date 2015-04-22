@@ -9,7 +9,7 @@
 [alias]
   s = status -sb
   ci = commit
-  cim = commit -m 
+  cim = commit -m
   cima = commit -a -m
   lo = log --decorate --abbrev-commit --date=relative
   l = log --decorate --oneline --graph
@@ -17,6 +17,7 @@
   co = checkout
 	slap = blame -w
   b = branch -v
+  bl = for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(refname:short) %(color:green)(%(committerdate:relative))%(color:reset)'
   fp = format-patch -k -M -N
   bc = branch --contains
 [apply]
