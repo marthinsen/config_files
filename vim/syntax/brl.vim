@@ -361,6 +361,15 @@ syn keyword brlVariables
   \ darcy-x
   \ darcy-y
   \ darcy-z
+  \ darcy-xx
+  \ darcy-xy
+  \ darcy-xz
+  \ darcy-yx
+  \ darcy-yy
+  \ darcy-yz
+  \ darcy-zx
+  \ darcy-zy
+  \ darcy-zz
   \ density
   \ diki
   \ disipationterm
