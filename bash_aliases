@@ -5,7 +5,7 @@ alias mv='mv -i'
 
 # Default to human readable figures
 alias df='df -h'
-alias du='du -h'                              
+alias du='du -h'
 
 # Misc :)
 alias grep='grep --color'                     # show differences in colour
@@ -15,7 +15,7 @@ alias diff='colordiff'                        # Use colordiff as default diff to
 
 # Listings
 alias ls='ls -hF --color'                     # add color for filetype recognition
-alias ll='ls -lh --group-directories-first'   # 
+alias ll='ls -lh --group-directories-first'   #
 alias la='ls -lhA'                            # show hidden files
 alias lx='ls -lhXB'                           # sort by extension
 alias lk='ls -lhSr'                           # sort by size

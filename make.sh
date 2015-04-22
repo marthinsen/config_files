@@ -23,17 +23,20 @@ fi
 if [ -d ~/.vim ] ; then
   mv ~/.vim ~/.vim.bak
 fi
+if [ -f ~/.git-completion.sh ] ; then
+  mv ~/.git-completion.sh ~/.git-completion.sh.bak
+fi
 if [ -f ~/.screenrc ] ; then
   mv ~/.screenrc ~/.screenrc.bak
 fi
-if [ -f ~/.irssi ] ; then
+if [ -d ~/.irssi ] ; then
   mv ~/.irssi ~/.irssi.bak
 fi
 if [ -f ~/.ctags ] ; then
   mv ~/.ctags ~/.ctags.bak
 fi
 if [ -f ~/.tmux.conf ] ; then
-  mv ~/.tmux.conf.bak ~/.tmux.conf.bak
+  mv ~/.tmux.conf ~/.tmux.conf.bak
 fi
 if [ -f ~/.colordiffrc ] ; then
   mv ~/.colordiffrc ~/.colordiffrc.bak
