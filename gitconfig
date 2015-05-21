@@ -20,6 +20,7 @@
   bl = for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(refname:short) %(color:green)(%(committerdate:relative))%(color:reset)'
   fp = format-patch -k -M -N
   bc = branch --contains
+  mr = log --pretty='format:%h %s' --reverse master..
 [apply]
 	whitespace = nowarn
 [log]
