@@ -29,3 +29,5 @@ alias netf='cd /cygdrive/z/eirik/'
 
 #cygwin
 alias start='cygstart'
+
+alias brg='brl %noconnect && start GeoFile.brf'
