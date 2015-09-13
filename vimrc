@@ -50,7 +50,7 @@ filetype off
     Bundle "garbas/vim-snipmate"
 
     " PHP
-    Bundle "madflow/vim-php"
+    Bundle "sadleon/vim-php"
 
     " Python
     Bundle "nvie/vim-flake8"
