@@ -21,6 +21,7 @@
   fp = format-patch -k -M -N
   bc = branch --contains
   mr = log --pretty='format:%h %s' --reverse master..
+  sub = "!f() { git grep -l "$1" | xargs sed -i "s/$1/$2/g"; }; f"
 [apply]
 	whitespace = nowarn
 [log]
