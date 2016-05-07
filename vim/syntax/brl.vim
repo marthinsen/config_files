@@ -95,6 +95,7 @@ syn keyword brlCommand
   \ #hexahedron
   \ #ignition_time
   \ #in_situ_stress
+  \ #in_situ_stress_end
   \ #inactive_criteria
   \ #inactive_period
   \ #initial_conditions
@@ -174,18 +175,26 @@ syn keyword brlCommand
   \ #circumferential_split
   \ #connect_object_to
   \ #continueonthermocrash
+  \ #cylinder_squer_size
+  \ #deform_geometry
   \ #densitybasedthermo
   \ #external_longitudinal_stress
   \ #flow_parameters
+  \ #flowing_model
   \ #fluid
   \ #global_centre_divisor
   \ #global_flow_divisor
   \ #heat_load
+  \ #hydrostatic_initialization
+  \ #initial_conditions
   \ #initial_conditions_inventory
   \ #initial_conditions_shell
+  \ #inlet
+  \ #inventory_model
   \ #join_concentration_difference
   \ #join_maximal_volume
   \ #link
+  \ #link2
   \ #max_axial_split
   \ #max_radial_split
   \ #max_ruptured_pipes
@@ -198,14 +207,19 @@ syn keyword brlCommand
   \ #peak_load
   \ #phase_type
   \ #pipe
+  \ #pressure_safety_valve
   \ #process_safety_valve
   \ #psv_valve_location
   \ #rad_calc_frequence
+  \ #radiation_include
   \ #reactivate_criteria
   \ #ref_point_current_model
   \ #ref_point_other_model
   \ #segment_definition_file
+  \ #set_noflow
+  \ #sink
   \ #source
+  \ #sphericalvessel
   \ #split_concentration_difference
   \ #split_concentration_material
   \ #split_debounce_steps
@@ -223,7 +237,7 @@ syn keyword brlCommand
   \ #vessel_outside_conditions
   \ #vessel_result_file
   \ #vessfire_result_file
-  \ #deform_geometry
+
 
 " 
 " CoatSim specific commands
@@ -292,10 +306,87 @@ syn keyword brlSubCommand
 
 " VessFire specific subcommands
 syn keyword brlSubCommand
-  \ %corTol
-  \ %inventory
-  \ %prodTol
-  \ %shell
+  \ %backpressure
+  \ %bendfrictionfactor
+  \ %centredivisor
+  \ %connect
+  \ %copygroup
+  \ %cortol
+  \ %cylinderdiameter
+  \ %cylindricallength
+  \ %dia
+  \ %direction
+  \ %displace
+  \ %divisor
+  \ %downstream
+  \ %downstreamloc
+  \ %endcapthickness
+  \ %endcapthicknessfactor
+  \ %endcaptype
+  \ %examplesub
+  \ %expandinnerring
+  \ %expandouterring
+  \ %flowdivisor
+  \ %gridresolution
+  \ %groupname
+  \ %hydrocarbonlevel
+  \ %ident
+  \ %init
+  \ %initvelo
+  \ %inventorysplit
+  \ %keepinitiation
+  \ %keepnames
+  \ %len
+  \ %lengthplot
+  \ %loc1
+  \ %loc2
+  \ %location
+  \ %maxradialsplit
+  \ %model
+  \ %name
+  \ %newgraphname
+  \ %newgroup
+  \ %nowarning
+  \ %object1
+  \ %object2
+  \ %optime
+  \ %part
+  \ %peakanglespan
+  \ %peakdivisor
+  \ %peakheatlocation
+  \ %peakheatsize
+  \ %peaklength
+  \ %phase
+  \ %phasetype
+  \ %pipe
+  \ %piprad
+  \ %pitchangle
+  \ %presplit
+  \ %prodtol
+  \ %reducerlengt
+  \ %reducerlength
+  \ %reducerresolution
+  \ %relloc
+  \ %res
+  \ %retrieve
+  \ %rotang
+  \ %rotax
+  \ %rotpoint
+  \ %roughness
+  \ %showspot
+  \ %simplifiedinventory
+  \ %split
+  \ %store
+  \ %text
+  \ %tiltangle
+  \ %type
+  \ %vec
+  \ %vecpkt
+  \ %vecup
+  \ %verify
+  \ %volumefrac
+  \ %wall
+  \ %waterlevel
 
 " CoatSim specific sub commands
 syn keyword brlSubCommand
@@ -511,6 +602,12 @@ syn keyword brlVariables
   \ wkl_m444
  
 "
+" Strings
+"
+
+syn region brlString start=/\v"/ skip=/\v\\./ end=/\v"/
+
+"
 " Comments
 "
 syn region	brlComment	start="//" skip="\\$" end="$" keepend contains=brlTodo
@@ -532,6 +629,7 @@ let b:current_syntax = "brl"
 
 hi def link brlCommand    Type
 hi def link brlSubCommand Function
+hi def link brlString     String
 hi def link brlNumbers    Number
 hi def link brlNumber     Number  
 hi def link brlFloat      Number
