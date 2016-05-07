@@ -31,3 +31,13 @@ alias netf='cd /cygdrive/z/eirik/'
 alias start='cygstart'
 
 alias brg='brl %noconnect && start GeoFile.brf'
+
+zip_version_function() {
+  zip "$(basename $1)_$(git rev-parse --short HEAD).zip" -r $1
+}
+alias zipversion=zip_version_function
+
+pybrf_function() {
+  /cygdrive/d/scripts/pybrf/pybrf.py $@
+}
+alias pybrf=pybrf_function
