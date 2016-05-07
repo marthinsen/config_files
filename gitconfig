@@ -6,6 +6,7 @@
 [core]
   autocrlf = input
 	editor = vim
+	fileMode = false
 [alias]
   s = status -sb
   ci = commit
@@ -17,7 +18,7 @@
   co = checkout
 	slap = blame -w
   b = branch -v
-  bl = for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(refname:short) %(color:green)(%(committerdate:relative))%(color:reset)'
+  bl = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(refname:short) %(color:green)(%(committerdate:relative))%(color:reset)'
   fp = format-patch -k -M -N
   bc = branch --contains
   mr = log --pretty='format:%h %s' --reverse master..
