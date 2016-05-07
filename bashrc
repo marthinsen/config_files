@@ -74,3 +74,5 @@ export HISTFILESIZE=10000
 if [ $(uname -o) == "Cygwin" ]; then
   export BROWSER=cygstart
 fi
+
+export LANG='en_US.UTF-8'
