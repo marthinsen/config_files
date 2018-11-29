@@ -10,65 +10,67 @@ filetype off
         echo "Installing Vundle.."
         echo ""
         silent !mkdir -p ~/.vim/bundle
-        silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+        silent !git clone https://github.com/VundleVim/Vundle.vim ~/.vim/bundle/vundle
         let iCanHazVundle=0
     endif
     set rtp+=~/.vim/bundle/vundle/
-    call vundle#rc()
-    Bundle 'gmarik/vundle'
+    call vundle#begin()
+    Plugin 'VundleVim/Vundle.vim'
 
     " Awesome syntax checker. See :h syntastic for help
-    Bundle 'scrooloose/syntastic'
+    Plugin 'scrooloose/syntastic'
     
     " File tree
-    Bundle 'scrooloose/nerdtree'
+    Plugin 'scrooloose/nerdtree'
 
     " Code commenter
-    Bundle 'scrooloose/nerdcommenter'
+    Plugin 'scrooloose/nerdcommenter'
 
     " Autoclose brackets
-    Bundle 'Townk/vim-autoclose'
+    Plugin 'Townk/vim-autoclose'
 
     " New colorsheme
-    Bundle 'altercation/vim-colors-solarized'
+    Plugin 'altercation/vim-colors-solarized'
+    " Plugin 'morhetz/gruvbox'
 
     " Git wrapper inside vim
-    Bundle 'tpope/vim-fugitive'
+    Plugin 'tpope/vim-fugitive'
 
     " Powerline
     Plugin 'bling/vim-airline'
 
     " C.vim
-    Bundle 'c.vim'
+    Plugin 'c.vim'
 
     " cscope key bindings
-    Bundle "steffanc/cscopemaps.vim"
+    Plugin 'steffanc/cscopemaps.vim'
 
     " Snipmate + dependencies
-    Bundle "MarcWeber/vim-addon-mw-utils"
-    Bundle "tomtom/tlib_vim"
-    Bundle "garbas/vim-snipmate"
+    Plugin 'MarcWeber/vim-addon-mw-utils'
+    Plugin 'tomtom/tlib_vim'
+    Plugin 'garbas/vim-snipmate'
 
     " PHP
-    Bundle "sadleon/vim-php"
+    Plugin 'sadleon/vim-php'
 
     " Python
-    Bundle "nvie/vim-flake8"
+    Plugin 'nvie/vim-flake8'
 
-    " Go
-    Bundle "fatih/vim-go"
+    " EditorConfig
+    Plugin 'editorconfig/editorconfig-vim'
 
     if iCanHazVundle == 0
-        echo "Installing Bundles, please ignore key map error messages"
+        echo "Installing Plugins, please ignore key map error messages"
         echo ""
-        :BundleInstall
+        :PluginInstall
     endif
+    call vundle#end()
 " Setting up Vundle - the vim plugin bundler end
 
 filetype on
 
 syntax enable
-set background=dark
+" set background=dark
 colorscheme solarized
 
 map <silent> <C-n> :NERDTreeToggle<CR>
@@ -284,8 +286,3 @@ let &t_ti.="\e[1 q"
 let &t_SI.="\e[5 q"
 let &t_EI.="\e[1 q"
 let &t_te.="\e[0 q"
-
-" Strictly necessary for Powerline
-set encoding=utf-8
-" Powerline font (Download from https://github.com/powerline/fonts)
-let g:airline_powerline_fonts = 1
