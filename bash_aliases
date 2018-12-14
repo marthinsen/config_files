@@ -28,7 +28,10 @@ alias globf='cd /cygdrive/s/Brilliant/Eirik/'
 alias netf='cd /cygdrive/z/eirik/'
 
 #cygwin
-alias start='cygstart'
+if [ $(uname -o) == "Cygwin" ]; then
+  alias start='cygstart'
+  alias git='/cygdrive/c/Program\ Files/Git/mingw64/bin/git.exe'
+fi
 
 alias brg='brl %noconnect && start GeoFile.brf'
 

@@ -1,5 +1,9 @@
 #! /bin/bash
 
+# I wasn't able to get powerline-status to work on Cygwin/bash
+# so I used powerline-shell instead.
+pip install -U powerline-shell powerline-status
+
 echo "Moving old config files"
 
 if [ -f ~/.gitconfig ] ; then

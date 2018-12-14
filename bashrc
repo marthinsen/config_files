@@ -1,4 +1,11 @@
 # ~/.bashrc: executed by bash(1) for interactive shells.
+function _update_ps1() {
+    PS1=$(powerline-shell $?)
+}
+
+if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+fi
 
 # If not running interactively, don't do anything
 [[ "$-" != *i* ]] && return
@@ -41,27 +48,6 @@ fi
 export EDITOR=vim               # Set vim to default editor
 export LESS='-R'                # Correct escape characters 
 export TERM=xterm-256color      # Get 256 colors in vim (?)
-[ -n "$TMUX" ] && export TERM=screen-256color
-
-# ==== alias for colors ========
-BLACK="\[$(tput setaf 0)\]"
-BLUE="\[$(tput setaf 4)\]"
-GREEN="\[$(tput setaf 2)\]"
-CYAN="\[$(tput setaf 6)\]"
-RED="\[$(tput setaf 1)\]"
-MAGENTA="\[$(tput setaf 5)\]"
-YELLOW="\[$(tput setaf 3)\]"
-WHITE="\[$(tput setaf 7)\]"
-
-RETURN="\[$(tput sgr0)\]"
-BOLD="\[$(tput bold)\]"
-REV="\[$(tput rev)\]"
-
-export PS1="$BLUE$BOLD\u$RED@$BLUE\h$RED:$YELLOW\W$RED\$ $RETURN"
-
-# color output of ls command
-LS_COLORS="di=01;35" 
-export LS_COLORS
 
 # Make sure file permissions after git push is preserved
 umask 000
