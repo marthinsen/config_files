@@ -40,7 +40,4 @@ zip_version_function() {
 }
 alias zipversion=zip_version_function
 
-pybrf_function() {
-  /cygdrive/d/scripts/pybrf/pybrf.py $@
-}
-alias pybrf=pybrf_function
+alias pip='python -m pip'
