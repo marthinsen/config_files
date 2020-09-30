@@ -2,58 +2,34 @@
 
 # I wasn't able to get powerline-status to work on Cygwin/bash
 # so I used powerline-shell instead.
-pip install -U powerline-shell powerline-status
+python -m pip install -U powerline-shell powerline-status
 
-echo "Moving old config files"
+files=(
+  gitconfig
+  bashrc
+  bash_profile
+  bash_aliases
+  bash_functions
+  vimrc
+  vim
+  ctags
+  tmux.conf
+  colordiffrc
+  )
 
-if [ -f ~/.gitconfig ] ; then
-  mv ~/.gitconfig ~/.gitconfig.bak
-fi
-if [ -f ~/.bashrc ] ; then
-  mv ~/.bashrc ~/.bashrc.bak
-fi
-if [ -f ~/.bash_profile ] ; then
-  mv ~/.bash_profile ~/.bash_profile.bak
-fi
-if [ -f ~/.bash_aliases ] ; then
-  mv ~/.bash_aliases ~/.bash_aliases.bak
-fi
-if [ -f ~/.bash_functions ] ; then
-  mv ~/.bash_functions ~/.bash_functions.bak
-fi
-if [ -f ~/.vimrc ] ; then
-  mv ~/.vimrc ~/.vimrc.bak
-fi
-if [ -d ~/.vim ] ; then
-  mv ~/.vim ~/.vim.bak
-fi
-if [ -f ~/.screenrc ] ; then
-  mv ~/.screenrc ~/.screenrc.bak
-fi
-if [ -d ~/.irssi ] ; then
-  mv ~/.irssi ~/.irssi.bak
-fi
-if [ -f ~/.ctags ] ; then
-  mv ~/.ctags ~/.ctags.bak
-fi
-if [ -f ~/.tmux.conf ] ; then
-  mv ~/.tmux.conf ~/.tmux.conf.bak
-fi
-if [ -f ~/.colordiffrc ] ; then
-  mv ~/.colordiffrc ~/.colordiffrc.bak
-fi
+for file in "${files[@]}"; do
+  # Unlink or backup old files
+  if [ -L ~/.$file ] ; then
+    unlink ~/.$file
+  elif [ -f ~/.$file ] ; then
+    mv ~/.$file ~/.$file.bak
+  fi
 
-echo "Creating symlinks to new ones"
-
-ln -s $( cd "$( dirname "$0" )" && pwd )/gitconfig ~/.gitconfig
-ln -s $( cd "$( dirname "$0" )" && pwd )/bashrc ~/.bashrc
-ln -s $( cd "$( dirname "$0" )" && pwd )/bash_profile ~/.bash_profile
-ln -s $( cd "$( dirname "$0" )" && pwd )/bash_aliases ~/.bash_aliases
-ln -s $( cd "$( dirname "$0" )" && pwd )/bash_functions ~/.bash_functions
-ln -s $( cd "$( dirname "$0" )" && pwd )/vimrc ~/.vimrc
-ln -s $( cd "$( dirname "$0" )" && pwd )/vim ~/.vim
-ln -s $( cd "$( dirname "$0" )" && pwd )/screenrc ~/.screenrc
-ln -s $( cd "$( dirname "$0" )" && pwd )/irssi ~/.irssi
-ln -s $( cd "$( dirname "$0" )" && pwd )/ctags ~/.ctags
-ln -s $( cd "$( dirname "$0" )" && pwd )/tmux.conf ~/.tmux.conf
-ln -s $( cd "$( dirname "$0" )" && pwd )/colordiffrc ~/.colordiffrc
+  # Link new files
+  if [ $(uname -o) == "Cygwin" -a "$file" == "gitconfig" ] ; then
+    # Windows Git on Cygwin does not understand symbolic links
+    cp    $( cd "$( dirname "$0" )" && pwd )/$file ~/.$file
+  else
+    ln -s $( cd "$( dirname "$0" )" && pwd )/$file ~/.$file
+  fi
+done
