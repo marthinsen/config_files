@@ -286,3 +286,7 @@ let &t_ti.="\e[1 q"
 let &t_SI.="\e[5 q"
 let &t_EI.="\e[1 q"
 let &t_te.="\e[0 q"
+
+" Avoid warning from SnipMate. Suggestion from ':h SnipMate-deprecate'
+" Can probably be removed in the future.
+let g:snipMate = { 'snippet_version' : 1 }
