@@ -47,7 +47,6 @@ fi
 
 export EDITOR=vim               # Set vim to default editor
 export LESS='-R'                # Correct escape characters 
-export TERM=xterm-256color      # Get 256 colors in vim (?)
 
 # Make sure file permissions after git push is preserved
 umask 000
