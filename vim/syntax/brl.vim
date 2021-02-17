@@ -175,6 +175,7 @@ syn keyword brlCommand
   \ #circumferential_split
   \ #connect_object_to
   \ #continueonthermocrash
+  \ #continuitycheck
   \ #cylinder_squer_size
   \ #deform_geometry
   \ #densitybasedthermo
@@ -215,9 +216,11 @@ syn keyword brlCommand
   \ #reactivate_criteria
   \ #ref_point_current_model
   \ #ref_point_other_model
+  \ #reflecting_free_surface
   \ #segment_definition_file
   \ #set_noflow
   \ #sink
+  \ #solution_procedure
   \ #source
   \ #sphericalvessel
   \ #split_concentration_difference
@@ -442,6 +445,7 @@ syn keyword brlDollar
 "
 syn keyword brlVariables 
   \ absorption
+  \ advectiveheat
   \ air_temperature
   \ continuityerror
   \ convheat
@@ -450,14 +454,14 @@ syn keyword brlVariables
   \ criticalstress
   \ darcy
   \ darcy-x
-  \ darcy-y
-  \ darcy-z
   \ darcy-xx
   \ darcy-xy
   \ darcy-xz
+  \ darcy-y
   \ darcy-yx
   \ darcy-yy
   \ darcy-yz
+  \ darcy-z
   \ darcy-zx
   \ darcy-zy
   \ darcy-zz
@@ -474,11 +478,15 @@ syn keyword brlVariables
   \ fixangle
   \ flowflux
   \ flowmodelname
+  \ heattransfer
   \ heattransfercoef
   \ initialopening
   \ injectflow
   \ jintegralsize
   \ kineticenergy
+  \ liquidmfr
+  \ liquidvfr
+  \ masserror
   \ maxfrontlinelength
   \ mixlength
   \ netradiation
@@ -486,12 +494,15 @@ syn keyword brlVariables
   \ permeability
   \ permeability-x
   \ permeability-y
+  \ phtransferenthalpy
+  \ phtransfermass
   \ porosity
   \ pressure
   \ pressure_correction
   \ pressurecorrection
   \ propagateangle
   \ radsinksource
+  \ solidmfr
   \ solidvfr
   \ stagnation_pressure
   \ static_temperature
@@ -505,9 +516,11 @@ syn keyword brlVariables
   \ szz
   \ temperature
   \ tipintegral
+  \ totalmass
   \ true
   \ valveinletrate
   \ valvereleaserate
+  \ vapormfr
   \ vaporvfr
   \ viscosity
   \ volumefraction
@@ -515,6 +528,8 @@ syn keyword brlVariables
   \ vy-velocity
   \ vz-velocity
   \ wallfunk
+  \ watermfr
+  \ watervfr
   \ x
   \ y
   \ z
