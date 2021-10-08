@@ -107,6 +107,7 @@ syn keyword brlCommand
   \ #max_timestep
   \ #maxstep
   \ #maxtime
+  \ #model
   \ #move_cv_between_models
   \ #name
   \ #nowait_keyboard_active
@@ -255,6 +256,7 @@ syn keyword brlCommand
 " Subcommands
 "
 syn keyword brlSubCommand
+  \ %airtemperature
   \ %ang
   \ %connect
   \ %coolerinletloc
@@ -322,6 +324,8 @@ syn keyword brlSubCommand
   \ %displace
   \ %divisor
   \ %downstream
+  \ %downstreamendcapthickness
+  \ %downstreamendcaptype
   \ %downstreamloc
   \ %endcapthickness
   \ %endcapthicknessfactor
@@ -383,6 +387,8 @@ syn keyword brlSubCommand
   \ %text
   \ %tiltangle
   \ %type
+  \ %upstreamendcapthickness
+  \ %upstreamendcaptype
   \ %vec
   \ %vecpkt
   \ %vecup
@@ -390,23 +396,6 @@ syn keyword brlSubCommand
   \ %volumefrac
   \ %wall
   \ %waterlevel
-
-" CoatSim specific sub commands
-syn keyword brlSubCommand
-  \ %absorptioncoefficient
-  \ %centredivisor
-  \ %flowdivisor
-  \ %heaterwall1
-  \ %heatpercasette
-  \ %initvelo
-  \ %lossfactor
-  \ %numberofcasettes
-  \ %peaklength
-  \ %reducerlength
-  \ %reducerresolution
-  \ %relloc
-  \ %roughness
-  \ %solid
 
 "
 " Global commands
@@ -423,11 +412,12 @@ syn keyword brlAlphaKroll
   \ @else
   \ @endif 
   \ @if 
+  \ @material_define
   \ @printtrack 
   \ @readfile 
   \ @regular_grid_resolution
   \ @verify
-  \ @while 
+  \ @while
 
 syn keyword brlDollar 
   \ $boundaryconditions
@@ -435,10 +425,10 @@ syn keyword brlDollar
   \ $brf-2.00
   \ $brilliantFormat
   \ $end_of_file
-  \ $file_name 
+  \ $file_name
+  \ $main_model
   \ $model
   \ $vessFire
-  \ $coatsim
 
 "
 " Variables (?) 
