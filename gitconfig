@@ -14,7 +14,7 @@
   cima = commit -a -m
   lo = log --decorate --abbrev-commit --date=relative
   l = log --decorate --oneline --graph
-  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%aN>%Creset' --abbrev-commit
   co = checkout
 	slap = blame -w
   b = branch -v
