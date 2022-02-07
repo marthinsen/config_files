@@ -402,7 +402,9 @@ syn keyword brlSubCommand
 "
 syn keyword brlAlphaKroll 
   \ @@ 
+  \ @break
   \ @calc 
+  \ @continue
   \ @cylinder_center 
   \ @cylinder_periphery 
   \ @cylinder_squer_size 
@@ -410,6 +412,7 @@ syn keyword brlAlphaKroll
   \ @define 
   \ @do 
   \ @else
+  \ @elseif
   \ @endif 
   \ @if 
   \ @material_define
