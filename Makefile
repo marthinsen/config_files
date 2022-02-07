@@ -1,2 +1,2 @@
 all:
-	@./make.sh
+	@ /bin/bash make.sh

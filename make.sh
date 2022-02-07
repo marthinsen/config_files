@@ -2,7 +2,7 @@
 
 # I wasn't able to get powerline-status to work on Cygwin/bash
 # so I used powerline-shell instead.
-python -m pip install -U powerline-shell powerline-status
+python3 -m pip install -U powerline-shell powerline-status
 
 files=(
   gitconfig
