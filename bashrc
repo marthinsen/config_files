@@ -61,3 +61,5 @@ if [ $(uname -o) == "Cygwin" ]; then
 fi
 
 export LANG='en_US.UTF-8'
+
+shopt -s checkwinsize
