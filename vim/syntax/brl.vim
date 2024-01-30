@@ -311,6 +311,8 @@ syn keyword brlSubCommand
 
 " VessFire specific subcommands
 syn keyword brlSubCommand
+  \ %OutputMoleFractions
+  \ %OutputParameters
   \ %backpressure
   \ %bendfrictionfactor
   \ %centredivisor
