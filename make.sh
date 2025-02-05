@@ -1,19 +1,9 @@
 #! /bin/bash
 
-# I wasn't able to get powerline-status to work on Cygwin/bash
-# so I used powerline-shell instead.
-python3 -m pip install -U powerline-shell powerline-status
-
 files=(
   gitconfig
-  bashrc
-  bash_profile
-  bash_aliases
-  bash_functions
   vimrc
   vim
-  ctags
-  tmux.conf
   colordiffrc
   )
 
