@@ -1,6 +1,7 @@
 #! /bin/bash
 
 files=(
+  bashrc
   gitconfig
   vimrc
   vim
