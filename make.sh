@@ -24,3 +24,8 @@ for file in "${files[@]}"; do
     ln -s $( cd "$( dirname "$0" )" && pwd )/$file ~/.$file
   fi
 done
+
+# Link oh-my-bash custom scripts (oh-my-bash sources every *.sh in its custom folder)
+for file in wsl.sh; do
+  ln -sfn $( cd "$( dirname "$0" )" && pwd )/$file ~/.oh-my-bash/custom/$file
+done
