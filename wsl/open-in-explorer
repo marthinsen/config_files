@@ -1,0 +1,5 @@
+#! /bin/sh
+# Open a path in Windows Explorer. Registered by make.sh as the default handler for
+# directories under WSL, so xdg-open (and Qt's QDesktopServices) opens folders in Explorer.
+# Called by absolute path because the Windows PATH may not be appended inside WSL.
+exec /mnt/c/Windows/explorer.exe "$(wslpath -w "$1")"
